@@ -3,7 +3,7 @@
 namespace App\Policies;
 
 use App\Models\User;
-use App\Models\tag;
+use App\Models\Tag;
 use Illuminate\Auth\Access\Response;
 
 class TagPolicy
