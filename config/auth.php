@@ -44,10 +44,6 @@ return [
             'driver' => 'session',
             'provider' => 'administrators',
         ],
-        'user' => [
-            'driver' => 'session',
-            'provider' => 'users',
-        ],
     ],
 
     /*

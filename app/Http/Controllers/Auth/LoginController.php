@@ -24,11 +24,11 @@ class LoginController extends Controller
 
             return redirect()->route('welcome');
         }
-        if(auth('user')->attempt($credentials)){
+        if(auth('web')->attempt($credentials)){
             $request->session()->regenerate();
 
             return redirect()->route('welcome');
         }
-        return redirect()->route('login')->with('authentication', 'Email atau password salah!')->withInput();
+        return redirect()->route('login')->withErrors(['authentication' => 'Email atau password salah!'])->withInput();
     }
 }
