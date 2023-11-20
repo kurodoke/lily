@@ -15,7 +15,7 @@ class LoginController extends Controller
 
     function login(Request $request) : RedirectResponse {
         $credentials = $request->validate([
-            'email' => 'required|string|email|min:3|max:255',
+            'email' => 'required|email|min:3|max:255',
             'password' => 'required|string|min:3|max:255',
         ]);
 
