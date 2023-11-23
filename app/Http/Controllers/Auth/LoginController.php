@@ -22,12 +22,12 @@ class LoginController extends Controller
         if(auth('admin')->attempt($credentials)){
             $request->session()->regenerate();
 
-            return redirect()->route('welcome');
+            return redirect()->route('dashboard');
         }
         if(auth('web')->attempt($credentials)){
             $request->session()->regenerate();
 
-            return redirect()->route('welcome');
+            return redirect()->route('landing-page');
         }
         return redirect()->route('login')->withErrors(['authentication' => 'Email atau password salah!'])->withInput();
     }

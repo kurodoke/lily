@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
 use Illuminate\Support\Facades\Route;
@@ -23,4 +24,8 @@ Route::middleware('guest')->group(function () {
 
     Route::get('/register', [RegisterController::class, 'index'])->name('register');
     Route::post('/register',[RegisterController::class, 'register']);
+});
+
+Route::middleware('auth:admin')->group(function () {
+    Route::get('/dashboard',[DashboardController::class, 'index'])->name('dashboard');
 });
