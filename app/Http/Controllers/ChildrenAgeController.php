@@ -5,15 +5,16 @@ namespace App\Http\Controllers;
 use App\Models\ChildrenAge;
 use App\Http\Requests\StoreChildrenAgeRequest;
 use App\Http\Requests\UpdateChildrenAgeRequest;
+use Illuminate\Contracts\View\View;
 
 class ChildrenAgeController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index() : View
     {
-        //
+        return view('managemen.umur.index');
     }
 
     /**

@@ -26,11 +26,11 @@ class RedirectIfAuthenticated
         // }
 
         if (auth('admin')->check()) {
-            return redirect()->route('dashboard');
+            return redirect()->route('admin.dashboard');
         }
 
         if (auth('web')->check()) {
-            return redirect()->route('landing-page');
+            return redirect()->route('user.landing-page');
         }
 
 

@@ -25,11 +25,6 @@
                 <!--end::Svg Icon-->
             </div>
             <!--end::Aside mobile toggle-->
-            <!--begin::Logo-->
-            <a href="../../demo3/dist/index.html" class="d-flex align-items-center">
-                <img alt="Logo" src="assets/media/logos/logo-demo3-default.svg" class="h-20px" />
-            </a>
-            <!--end::Logo-->
         </div>
         <!--end::Wrapper-->
     </div>

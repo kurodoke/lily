@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title', 'Dashboard')
-@section('subtitle', 'dashboard')
+@section('subtitle', 'Dashboard')
 
 @section('content')
     <div class="content d-flex flex-column flex-column-fluid" id="kt_content">

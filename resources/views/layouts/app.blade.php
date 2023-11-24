@@ -16,6 +16,10 @@
     <link href={{ asset('assets/css/style.bundle.css') }} rel="stylesheet" type="text/css" />
     <!--end::Global Stylesheets Bundle-->
 
+    <!--begin::Page Vendor Stylesheets(used by this page)-->
+    <link href={{ asset('assets/plugins/custom/datatables/datatables.bundle.css') }} rel="stylesheet" type="text/css" />
+    <!--end::Page Vendor Stylesheets-->
+
     <link rel="stylesheet" href={{ asset('css/layouts.css') }}>
     <title>@yield('title')</title>
 </head>
@@ -39,6 +43,10 @@
     <script src={{ asset('assets/js/scripts.bundle.js') }}></script>
     <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
     <!--end::Global Javascript Bundle-->
+
+    <!--begin::Page Vendors Javascript(used by this page)-->
+    <script src={{ asset('assets/plugins/custom/datatables/datatables.bundle.js') }}></script>
+    <!--end::Page Vendors Javascript-->
 
     @yield('script')
 </body>

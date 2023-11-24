@@ -4,7 +4,7 @@
     data-kt-drawer-toggle="#kt_aside_toggle">
     <div class="aside-logo flex-column-auto px-9 mb-9" id="kt_aside_logo">
         <!--begin::Logo-->
-        <a href="{{ route('dashboard') }}">
+        <a href="{{ route('admin.dashboard') }}">
             <h1 class="fw-bolder fs-1">lily.</h1>
         </a>
         <!--end::Logo-->
@@ -16,7 +16,7 @@
             data-kt-scroll-wrappers="#kt_aside, #kt_aside_menu, #kt_aside_menu_wrapper" data-kt-scroll-offset="100">
             <div class="menu menu-column menu-rounded fw-bold my-auto" id="#kt_aside_menu" data-kt-menu="true">
                 <div class="menu-item">
-                    <a class="menu-link active" href="{{ route('dashboard') }}">
+                    <a class="menu-link {{ request()->routeIs('admin.dashboard') ? 'active' : '' }}" href="{{ route('admin.dashboard') }}">
                         <span class="menu-icon">
                             <!--begin::Svg Icon | path: icons/duotune/arrows/arr001.svg-->
                             <span class="svg-icon svg-icon-5">
@@ -34,8 +34,8 @@
                     </a>
                 </div>
 
-                <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
-                    <span class="menu-link">
+                <div data-kt-menu-trigger="click" class="menu-item menu-accordion {{ request()->routeIs('admin.managemen.*') ? 'here show' : '' }}">
+                    <span class="menu-link ">
                         <span class="menu-icon">
                             <!--begin::Svg Icon | path: icons/duotune/arrows/arr001.svg-->
                             <span class="svg-icon svg-icon-5">
@@ -54,7 +54,7 @@
                     </span>
                     <div class="menu-sub menu-sub-accordion menu-active-bg">
                         <div class="menu-item">
-                            <a class="menu-link" href="../../demo3/dist/pages/profile/overview.html">
+                            <a class="menu-link {{ request()->routeIs('admin.managemen.umur.index') ? 'active' : '' }}" href="{{ route('admin.managemen.umur.index') }}">
                                 <span class="menu-bullet">
                                     <span class="bullet bullet-dot"></span>
                                 </span>
