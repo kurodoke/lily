@@ -22,7 +22,7 @@ class LoginController extends Controller
         if(auth('admin')->attempt($credentials)){
             $request->session()->regenerate();
 
-            return redirect()->route('dashboard');
+            return redirect()->route('admin.dashboard');
         }
         if(auth('web')->attempt($credentials)){
             $request->session()->regenerate();

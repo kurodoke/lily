@@ -26,6 +26,7 @@
 
 <body>
     <div id="root">
+        @include('layouts.loading')
         <div class="d-flex flex-column flex-root">
             <div class="page d-flex flex-row flex-column-fluid">
                 <div class="wrapper d-flex flex-column flex-row-fluid" id="kt_wrapper">
@@ -47,6 +48,8 @@
     <!--begin::Page Vendors Javascript(used by this page)-->
     <script src={{ asset('assets/plugins/custom/datatables/datatables.bundle.js') }}></script>
     <!--end::Page Vendors Javascript-->
+
+    @include('layouts.script')
 
     @yield('script')
 </body>
