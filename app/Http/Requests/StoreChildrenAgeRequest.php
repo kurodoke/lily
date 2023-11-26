@@ -3,6 +3,7 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Rule;
 
 class StoreChildrenAgeRequest extends FormRequest
 {
@@ -11,7 +12,7 @@ class StoreChildrenAgeRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,7 +23,27 @@ class StoreChildrenAgeRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            "age_min" => ["required", "integer"],
+            "age_max" => [
+                "required", 
+                "integer", 
+                "gt:age_min",  
+                Rule::unique('children_ages')->where(function ($query) {
+                    return $query->where('age_min', $this->input('age_min'));
+                })
+            ],
+        ];
+    }
+
+    /**
+     * Get the error messages for the defined validation rules.
+     *
+     * @return array
+     */
+    public function messages()
+    {
+        return [
+            'age_max.unique' => 'The combination must be unique.',
         ];
     }
 }

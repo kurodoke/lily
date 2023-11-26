@@ -4,9 +4,14 @@
 @section('subtitle', 'Umur Game')
 
 @section('content')
+
     <div class="content d-flex flex-column flex-column-fluid" id="kt_content">
         <!--begin::Container-->
         <div class="container-xxl" id="kt_content_container">
+
+            @include('managemen.umur.flash.error')
+            @include('managemen.umur.flash.success')
+            
             <!--begin::Table-->
             <div class="card card-flush mt-6 mt-xl-9">
                 <!--begin::Card header-->
@@ -24,7 +29,7 @@
                         <!--begin::Actions-->
                         <div class="d-flex mb-4">
                             <a href="#" class="btn btn-sm btn-warning me-3" data-bs-toggle="modal"
-                                data-bs-target="#kt_modal_new_target">Tambah Umur</a>
+                                data-bs-target="#kt_modal_add">Tambah Umur</a>
                             <!--begin::Menu-->
                         </div>
                         <!--end::Actions-->
@@ -48,7 +53,8 @@
                                                     fill="black" />
                                             </svg></span>
                                         <!--end::Svg Icon-->
-                                        <div class="fs-4 fw-bolder" data-kt-countup="true" data-kt-countup-value="75">0
+                                        <div class="fs-4 fw-bolder" data-kt-countup="true"
+                                            data-kt-countup-value="{{ $ages->count() }}">0
                                         </div>
                                     </div>
                                     <!--end::Number-->
@@ -84,26 +90,29 @@
                             <!--end::Head-->
                             <!--begin::Body-->
                             <tbody class="fs-6">
-                                <tr>
-                                    <td>
-                                        <!--begin::User-->
-                                        <div class="d-flex align-items-center">
-                                            <!--begin::Wrapper-->
-                                            <div class="me-5 position-relative">
-                                                <span>1</span>
+                                @foreach ($ages as $age)
+                                    <tr>
+                                        <td>
+                                            <!--begin::User-->
+                                            <div class="d-flex align-items-center">
+                                                <!--begin::Wrapper-->
+                                                <div class="me-5 position-relative">
+                                                    <span>{{ $age->id }}</span>
+                                                </div>
+                                                <!--end::Wrapper-->
                                             </div>
-                                            <!--end::Wrapper-->
-                                        </div>
-                                        <!--end::User-->
-                                    </td>
-                                    <td>3 Tahun</td>
-                                    <td>6 Tahun</td>
-                                    <td class="">
-                                        <a href="#" class="btn btn-info btn-sm">Edit</a>
-                                        <a href="#" class="btn btn-danger btn-sm">Hapus</a>
-                                    </td>
-                                </tr>
-
+                                            <!--end::User-->
+                                        </td>
+                                        <td>{{ $age->age_min }}</td>
+                                        <td>{{ $age->age_max }}</td>
+                                        <td class="">
+                                            <a href="#" class="btn btn-info btn-sm edit-button"
+                                                data-id="{{ $age->id }}"  data-bs-toggle="modal"
+                                                data-bs-target="#kt_modal_edit">Edit</a>
+                                            <a href="#" class="btn btn-danger btn-sm">Hapus</a>
+                                        </td>
+                                    </tr>
+                                @endforeach
                             </tbody>
                             <!--end::Body-->
                         </table>
@@ -117,7 +126,8 @@
 
         </div>
     </div>
-    @include('managemen.umur.modal')
+    @include('managemen.umur.modal.add')
+    @include('managemen.umur.modal.edit')
 
 
 @endsection

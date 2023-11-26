@@ -2,6 +2,10 @@
 
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\ChildrenAgeController;
+use App\Http\Controllers\CreativityController;
+use App\Http\Controllers\DesignForChildrenController;
+use App\Http\Controllers\LearnController;
+use App\Http\Controllers\TagController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,7 +24,19 @@ Route::middleware('auth:admin')->name('admin.')->group(function () {
     Route::get('/dashboard',[DashboardController::class, 'index'])->name('dashboard');
 
     Route::name('managemen.')->prefix('managemen')->group( function () {
-        Route::resource('umur', ChildrenAgeController::class)->except('create','show','edit');
+        Route::resource('umur', ChildrenAgeController::class)->except('create', 'show','edit');
+    });
+    Route::name('managemen.')->prefix('managemen')->group( function () {
+        Route::resource('kreatifitas', CreativityController::class)->except('create','show','edit');
+    });
+    Route::name('managemen.')->prefix('managemen')->group( function () {
+        Route::resource('manfaat', DesignForChildrenController::class)->except('create','show','edit');
+    });
+    Route::name('managemen.')->prefix('managemen')->group( function () {
+        Route::resource('pembelajaran', LearnController::class)->except('create','show','edit');
+    });
+    Route::name('managemen.')->prefix('managemen')->group( function () {
+        Route::resource('tag', TagController::class)->except('create','show','edit');
     });
 });
 

@@ -1,5 +1,5 @@
        <!--begin::Modal - New Target-->
-       <div class="modal fade" id="kt_modal_new_target" tabindex="-1" aria-hidden="true">
+       <div class="modal fade" id="kt_modal_add" tabindex="-1" aria-hidden="true">
            <!--begin::Modal dialog-->
            <div class="modal-dialog modal-dialog-centered mw-650px">
                <!--begin::Modal content-->
@@ -26,7 +26,7 @@
                    <!--begin::Modal body-->
                    <div class="modal-body scroll-y px-10 px-lg-15 pt-0 pb-15">
                        <!--begin:Form-->
-                       <form id="kt_modal_new_target_form" class="form"
+                       <form id="kt_modal_add_form" class="form"
                            action="{{ route('admin.managemen.umur.store') }}" method="POST">
                            @csrf
                            <!--begin::Heading-->
@@ -53,7 +53,7 @@
                                    </label>
                                    <!--end::Label-->
                                    <input type="number" class="form-control form-control-solid"
-                                       placeholder="Masukkan Umur Minimal" name="umur_min" />
+                                       placeholder="Masukkan Umur Minimal" name="age_min" />
                                </div>
                                <!--end::Input group-->
                                <!--begin::Input group-->
@@ -65,16 +65,16 @@
                                    </label>
                                    <!--end::Label-->
                                    <input type="number" class="form-control form-control-solid"
-                                       placeholder="Masukkan Umur Maksimal" name="umur_max" />
+                                       placeholder="Masukkan Umur Maksimal" name="age_max" />
                                </div>
                                <!--end::Input group-->
                            </div>
 
                            <!--begin::Actions-->
                            <div class="text-center">
-                               <button type="reset" id="kt_modal_new_target_cancel" data-bs-dismiss="modal"
+                               <button type="reset" id="kt_modal_add_cancel" data-bs-dismiss="modal"
                                    class="btn btn-light me-3">Batal</button>
-                               <button type="submit" id="kt_modal_new_target_submit" class="btn btn-warning">
+                               <button type="submit" id="kt_modal_add_submit" class="btn btn-warning">
                                    <span class="indicator-label">Tambah</span>
                                </button>
                            </div>

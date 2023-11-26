@@ -13,8 +13,11 @@ return new class extends Migration
     {
         Schema::create('children_ages', function (Blueprint $table) {
             $table->id();
-            $table->string('age');
+            $table->integer('age_min');
+            $table->integer('age_max');
             $table->timestamps();
+            
+            $table->unique(['age_min', 'age_max']);
         });
     }
 

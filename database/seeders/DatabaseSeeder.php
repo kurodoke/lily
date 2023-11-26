@@ -22,6 +22,7 @@ class DatabaseSeeder extends Seeder
         $this->call([
             AdministratorSeeder::class,
             UserSeeder::class,
+            ChildrenAgeSeeder::class,
         ]);
     }
 }

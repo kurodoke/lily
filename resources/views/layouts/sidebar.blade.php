@@ -62,19 +62,35 @@
                             </a>
                         </div>
                         <div class="menu-item">
-                            <a class="menu-link" href="../../demo3/dist/pages/profile/overview.html">
+                            <a class="menu-link" {{ request()->routeIs('admin.managemen.kreatifitas.index') ? 'active' : '' }}" href="{{ route('admin.managemen.kreatifitas.index') }}">
                                 <span class="menu-bullet">
                                     <span class="bullet bullet-dot"></span>
                                 </span>
-                                <span class="menu-title">Kreatifittas Game</span>
+                                <span class="menu-title">Kreatifitas Game</span>
                             </a>
                         </div>
                         <div class="menu-item">
-                            <a class="menu-link" href="../../demo3/dist/pages/profile/overview.html">
+                            <a class="menu-link" {{ request()->routeIs('admin.managemen.manfaat.index') ? 'active' : '' }}" href="{{ route('admin.managemen.manfaat.index') }}">
                                 <span class="menu-bullet">
                                     <span class="bullet bullet-dot"></span>
                                 </span>
                                 <span class="menu-title">Manfaat Game</span>
+                            </a>
+                        </div>
+                        <div class="menu-item">
+                            <a class="menu-link" {{ request()->routeIs('admin.managemen.pembelajaran.index') ? 'active' : '' }}" href="{{ route('admin.managemen.pembelajaran.index') }}">
+                                <span class="menu-bullet">
+                                    <span class="bullet bullet-dot"></span>
+                                </span>
+                                <span class="menu-title">Pembelajaran Game</span>
+                            </a>
+                        </div>
+                        <div class="menu-item">
+                            <a class="menu-link" {{ request()->routeIs('admin.managemen.tag.index') ? 'active' : '' }}" href="{{ route('admin.managemen.tag.index') }}">
+                                <span class="menu-bullet">
+                                    <span class="bullet bullet-dot"></span>
+                                </span>
+                                <span class="menu-title">Tag Game</span>
                             </a>
                         </div>
                     </div>

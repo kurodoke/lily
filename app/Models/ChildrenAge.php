@@ -8,4 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class ChildrenAge extends Model
 {
     use HasFactory;
+
+    protected $fillable = ['age_min', 'age_max'];
 }
