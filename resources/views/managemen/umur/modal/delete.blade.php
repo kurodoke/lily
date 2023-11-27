@@ -1,5 +1,5 @@
 <!--begin::Modal - New Target-->
-<div class="modal fade" id="kt_modal_edit" tabindex="-1" aria-hidden="true">
+<div class="modal fade" id="kt_modal_delete" tabindex="-1" aria-hidden="true">
     <!--begin::Modal dialog-->
     <div class="modal-dialog modal-dialog-centered mw-650px">
         <!--begin::Modal content-->
@@ -26,56 +26,27 @@
             <!--begin::Modal body-->
             <div class="modal-body scroll-y px-10 px-lg-15 pt-0 pb-15">
                 <!--begin:Form-->
-                <form id="kt_modal_edit_form" class="form" action="#" method="POST">
+                <form id="kt_modal_delete_form" class="form" action="#" method="POST">
                     @csrf
-                    @method('PUT')
+                    @method('DELETE')
                     <!--begin::Heading-->
                     <div class="mb-13 text-center">
                         <!--begin::Title-->
-                        <h1 class="mb-3">Edit Umur</h1>
+                        <h1 class="mb-3">Hapus Data ini?</h1>
                         <!--end::Title-->
                         <!--begin::Description-->
-                        <div class="text-muted fw-bold fs-5 mb-3">Edit batasan umur minimal dan umur
-                            maksimal
-                            untuk Game anak - anak
+                        <div class="text-muted fw-bold fs-5 mb-3">Yakin untuk menghapus data ini?
                         </div>
                         <!--end::Description-->
                     </div>
                     <!--end::Heading-->
-                    <div class="row">
-
-                        <!--begin::Input group-->
-                        <div class="col-md-6 d-flex flex-column mb-8 fv-row">
-                            <!--begin::Label-->
-                            <label class="d-flex align-items-center fs-6 fw-bold mb-2">
-                                <span class="required">Umur Minimal</span>
-
-                            </label>
-                            <!--end::Label-->
-                            <input type="number" class="form-control form-control-solid"
-                                placeholder="Masukkan Umur Minimal" name="age_min" />
-                        </div>
-                        <!--end::Input group-->
-                        <!--begin::Input group-->
-                        <div class="col-md-6 d-flex flex-column mb-8 fv-row">
-                            <!--begin::Label-->
-                            <label class="d-flex align-items-center fs-6 fw-bold mb-2">
-                                <span class="required">Umur Maksimal</span>
-
-                            </label>
-                            <!--end::Label-->
-                            <input type="number" class="form-control form-control-solid"
-                                placeholder="Masukkan Umur Maksimal" name="age_max" />
-                        </div>
-                        <!--end::Input group-->
-                    </div>
 
                     <!--begin::Actions-->
                     <div class="text-center">
-                        <button type="reset" id="kt_modal_edit_cancel" data-bs-dismiss="modal"
+                        <button type="reset" id="kt_modal_delete_cancel" data-bs-dismiss="modal"
                             class="btn btn-light me-3">Batal</button>
-                        <button type="submit" id="kt_modal_edit_submit" class="btn btn-warning">
-                            <span class="indicator-label">Edit</span>
+                        <button type="submit" id="kt_modal_delete_submit" class="btn btn-danger">
+                            <span class="indicator-label">Hapus</span>
                         </button>
                     </div>
                     <!--end::Actions-->

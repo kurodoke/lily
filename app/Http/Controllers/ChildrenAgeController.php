@@ -67,7 +67,7 @@ class ChildrenAgeController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateChildrenAgeRequest $request, string $id)
+    public function update(UpdateChildrenAgeRequest $request, string $id) : RedirectResponse
     {
         $validated = $request->validated();
 
@@ -79,11 +79,13 @@ class ChildrenAgeController extends Controller
         return redirect()->back()->with('success', ['title' => 'Edit','message' => 'Berhasil Mengedit']);
     }
 
-    /**
+    /** 
      * Remove the specified resource from storage.
      */
-    public function destroy(ChildrenAge $childrenAge)
+    public function destroy(String $id) : RedirectResponse
     {
-        //
+        ChildrenAge::find($id)->delete();
+
+        return redirect()->back()->with('success', ['title' => 'Delete','message' => 'Berhasil Menghapus']);
     }
 }

@@ -11,7 +11,7 @@
 
             @include('managemen.umur.flash.error')
             @include('managemen.umur.flash.success')
-            
+
             <!--begin::Table-->
             <div class="card card-flush mt-6 mt-xl-9">
                 <!--begin::Card header-->
@@ -97,7 +97,7 @@
                                             <div class="d-flex align-items-center">
                                                 <!--begin::Wrapper-->
                                                 <div class="me-5 position-relative">
-                                                    <span>{{ $age->id }}</span>
+                                                    <span>{{ $loop->iteration }}</span>
                                                 </div>
                                                 <!--end::Wrapper-->
                                             </div>
@@ -107,9 +107,10 @@
                                         <td>{{ $age->age_max }}</td>
                                         <td class="">
                                             <a href="#" class="btn btn-info btn-sm edit-button"
-                                                data-id="{{ $age->id }}"  data-bs-toggle="modal"
+                                                data-id="{{ $age->id }}" data-bs-toggle="modal"
                                                 data-bs-target="#kt_modal_edit">Edit</a>
-                                            <a href="#" class="btn btn-danger btn-sm">Hapus</a>
+                                            <a href="#" class="btn btn-danger btn-sm delete-button"  data-id="{{ $age->id }}"
+                                                data-bs-toggle="modal" data-bs-target="#kt_modal_delete"">Hapus</a>
                                         </td>
                                     </tr>
                                 @endforeach
@@ -128,6 +129,7 @@
     </div>
     @include('managemen.umur.modal.add')
     @include('managemen.umur.modal.edit')
+    @include('managemen.umur.modal.delete')
 
 
 @endsection
