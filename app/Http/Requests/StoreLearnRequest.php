@@ -11,7 +11,7 @@ class StoreLearnRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,7 +22,7 @@ class StoreLearnRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            "learn_name" => "required|string|unique:learns,learn_name,NULL,id"
         ];
     }
 }

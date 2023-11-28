@@ -10,6 +10,8 @@ class Learn extends Model
 {
     use HasFactory;
 
+    protected $fillable = ['learn_name'];
+
     function games() : BelongsToMany {
         return $this->belongsToMany(Game::class, 'game_learns', 'learn_id', 'game_id');
     }
