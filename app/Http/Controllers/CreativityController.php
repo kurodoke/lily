@@ -5,15 +5,20 @@ namespace App\Http\Controllers;
 use App\Models\Creativity;
 use App\Http\Requests\StoreCreativityRequest;
 use App\Http\Requests\UpdateCreativityRequest;
+use Illuminate\Contracts\View\View;
+use Illuminate\Http\JsonResponse;
+use Illuminate\Http\RedirectResponse;
+use Illuminate\Http\Response;
 
 class CreativityController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index() : View
     {
-        //
+        $creativities = Creativity::select('id', 'creativity_name')->orderBy('id')->get();
+        return view('managemen.kreatifitas.index', compact('creativities'));
     }
 
     /**
@@ -27,17 +32,27 @@ class CreativityController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreCreativityRequest $request)
+    public function store(StoreCreativityRequest $request) : RedirectResponse
     {
-        //
+        $validated = $request->validated();
+
+        Creativity::create([
+            "creativity_name" => $validated['creativity_name'],
+        ]);
+        
+        return redirect()->back()->with('success', ['title' => 'Tambah','message' => 'Berhasil Menambahkan']);
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(Creativity $creativity)
+    public function show(string $id) : JsonResponse
     {
-        //
+        return response()->json([
+            'code' => Response::HTTP_OK,
+            'message' => 'success',
+            'data' => Creativity::findOrFail($id),
+        ]);
     }
 
     /**
@@ -51,16 +66,24 @@ class CreativityController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateCreativityRequest $request, Creativity $creativity)
+    public function update(UpdateCreativityRequest $request, string $id)
     {
-        //
+        $validated = $request->validated();
+
+        Creativity::find($id)->update([
+            "creativity_name" => $validated['creativity_name'],
+        ]);
+
+        return redirect()->back()->with('success', ['title' => 'Edit','message' => 'Berhasil Mengedit']);
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Creativity $creativity)
+    public function destroy(string $id)
     {
-        //
+        Creativity::find($id)->delete();
+
+        return redirect()->back()->with('success', ['title' => 'Hapus','message' => 'Berhasil Menghapus']);
     }
 }

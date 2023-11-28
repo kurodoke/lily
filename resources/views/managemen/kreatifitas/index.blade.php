@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title', 'Pengelolaan data')
-@section('subtitle', 'Umur Game')
+@section('subtitle', 'Kreatifitas Game')
 
 @section('content')
 
@@ -9,8 +9,8 @@
         <!--begin::Container-->
         <div class="container-xxl" id="kt_content_container">
 
-            @include('managemen.umur.flash.error')
-            @include('managemen.umur.flash.success')
+            @include('managemen.kreatifitas.flash.error')
+            @include('managemen.kreatifitas.flash.success')
 
             <!--begin::Table-->
             <div class="card card-flush mt-6 mt-xl-9">
@@ -18,10 +18,9 @@
                 <div class="card-header mt-5">
                     <!--begin::Card title-->
                     <div class="card-title flex-column">
-                        <h3 class="fw-bolder mb-1">Tabel Umur</h3>
+                        <h3 class="fw-bolder mb-1">Tabel Kreatifitas</h3>
                         <!--begin::Description-->
-                        <div class="d-flex flex-wrap fw-bold mb-4 fs-5 text-gray-400">Pengelolaan data batasan
-                            umur anak - anak pada game</div>
+                        <div class="d-flex flex-wrap fw-bold mb-4 fs-5 text-gray-400">Pengelolaan data kreatifitas - kreatifitas yang ada pada game</div>
                         <!--end::Description-->
                     </div>
                     <div class="">
@@ -29,7 +28,7 @@
                         <!--begin::Actions-->
                         <div class="d-flex mb-4">
                             <a href="#" class="btn btn-sm btn-warning me-3" data-bs-toggle="modal"
-                                data-bs-target="#kt_modal_add">Tambah Umur</a>
+                                data-bs-target="#kt_modal_add">Tambah Kreatifitas</a>
                             <!--begin::Menu-->
                         </div>
                         <!--end::Actions-->
@@ -54,12 +53,12 @@
                                             </svg></span>
                                         <!--end::Svg Icon-->
                                         <div class="fs-4 fw-bolder" data-kt-countup="true"
-                                            data-kt-countup-value="{{ $ages->count() }}">0
+                                            data-kt-countup-value="{{ $creativities->count() }}">0
                                         </div>
                                     </div>
                                     <!--end::Number-->
                                     <!--begin::Label-->
-                                    <div class="fw-bold fs-6 text-gray-400">Total Umur</div>
+                                    <div class="fw-bold fs-6 text-gray-400">Total Kreatifitas</div>
                                     <!--end::Label-->
                                 </div>
                                 <!--end::Stat-->
@@ -82,15 +81,14 @@
                             <thead class="fs-7 text-gray-400 text-uppercase">
                                 <tr>
                                     <th class="fw-bolder">#</th>
-                                    <th class="min-w-150px">Umur minimal</th>
-                                    <th class="min-w-150px">Umur maksimal</th>
+                                    <th class="min-w-150px">Nama Kreatifitas</th>
                                     <th class="min-w-150px">Detail</th>
                                 </tr>
                             </thead>
                             <!--end::Head-->
                             <!--begin::Body-->
                             <tbody class="fs-6">
-                                @foreach ($ages as $age)
+                                @foreach ($creativities as $creativity)
                                     <tr>
                                         <td>
                                             <!--begin::User-->
@@ -103,13 +101,12 @@
                                             </div>
                                             <!--end::User-->
                                         </td>
-                                        <td>{{ $age->age_min }}</td>
-                                        <td>{{ $age->age_max }}</td>
+                                        <td>{{ $creativity->creativity_name }}</td>
                                         <td class="">
                                             <a href="#" class="btn btn-info btn-sm edit-button"
-                                                data-id="{{ $age->id }}" data-bs-toggle="modal"
+                                                data-id="{{ $creativity->id }}" data-bs-toggle="modal"
                                                 data-bs-target="#kt_modal_edit">Edit</a>
-                                            <a href="#" class="btn btn-danger btn-sm delete-button"  data-id="{{ $age->id }}"
+                                            <a href="#" class="btn btn-danger btn-sm delete-button"  data-id="{{ $creativity->id }}"
                                                 data-bs-toggle="modal" data-bs-target="#kt_modal_delete"">Hapus</a>
                                         </td>
                                     </tr>
@@ -127,12 +124,12 @@
 
         </div>
     </div>
-    @include('managemen.umur.modal.add')
-    @include('managemen.umur.modal.edit')
-    @include('managemen.umur.modal.delete')
+    @include('managemen.kreatifitas.modal.add')
+    @include('managemen.kreatifitas.modal.edit')
+    @include('managemen.kreatifitas.modal.delete')
 
 
 @endsection
 
 
-@include('managemen.umur.script')
+@include('managemen.kreatifitas.script')

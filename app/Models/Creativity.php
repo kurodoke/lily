@@ -10,6 +10,8 @@ class Creativity extends Model
 {
     use HasFactory;
 
+    protected $fillable = ['creativity_name'];
+
     function games() : BelongsToMany {
         return $this->belongsToMany(Game::class, 'game_creativites', 'creativity_id', 'game_id');
     }

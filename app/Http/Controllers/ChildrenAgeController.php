@@ -47,7 +47,7 @@ class ChildrenAgeController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(String $id) : JsonResponse
+    public function show(string $id) : JsonResponse
     {
         return response()->json([
             'code' => Response::HTTP_OK,
@@ -82,10 +82,10 @@ class ChildrenAgeController extends Controller
     /** 
      * Remove the specified resource from storage.
      */
-    public function destroy(String $id) : RedirectResponse
+    public function destroy(string $id) : RedirectResponse
     {
         ChildrenAge::find($id)->delete();
 
-        return redirect()->back()->with('success', ['title' => 'Delete','message' => 'Berhasil Menghapus']);
+        return redirect()->back()->with('success', ['title' => 'Hapus','message' => 'Berhasil Menghapus']);
     }
 }
