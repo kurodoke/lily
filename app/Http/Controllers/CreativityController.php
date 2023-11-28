@@ -66,7 +66,7 @@ class CreativityController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateCreativityRequest $request, string $id)
+    public function update(UpdateCreativityRequest $request, string $id) : RedirectResponse
     {
         $validated = $request->validated();
 
@@ -80,7 +80,7 @@ class CreativityController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(string $id) : RedirectResponse
     {
         Creativity::find($id)->delete();
 

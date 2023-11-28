@@ -11,7 +11,7 @@ class UpdateDesignForChildrenRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,7 +22,7 @@ class UpdateDesignForChildrenRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            "design_name" => "required|string|unique:design_for_childrens,design_name,NULL,id"
         ];
     }
 }
