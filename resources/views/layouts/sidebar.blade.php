@@ -97,7 +97,7 @@
                 </div>
 
                 <div class="menu-item">
-                    <a class="menu-link {{ request()->routeIs('admin.game') ? 'active' : '' }}" href="{{ route('admin.game') }}">
+                    <a class="menu-link {{ request()->routeIs('admin.game.index') ? 'active' : '' }}" href="{{ route('admin.game.index') }}">
                         <span class="menu-icon">
                             <!--begin::Svg Icon | path: icons/duotune/arrows/arr001.svg-->
                             <span class="svg-icon svg-icon-5">

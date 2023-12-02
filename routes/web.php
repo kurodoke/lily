@@ -40,7 +40,7 @@ Route::middleware('auth:admin')->name('admin.')->group(function () {
         Route::resource('tag', TagController::class)->except('create','show','edit');
     });
 
-    Route::get('/game',[GameController::class, 'index'])->name('game');
+    Route::resource('game', GameController::class)->except('create','show','edit');
 });
 
 
