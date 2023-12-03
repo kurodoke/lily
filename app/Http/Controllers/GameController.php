@@ -5,6 +5,10 @@ namespace App\Http\Controllers;
 use App\Models\Game;
 use App\Http\Requests\StoreGameRequest;
 use App\Http\Requests\UpdateGameRequest;
+use App\Models\Creativity;
+use App\Models\DesignForChildren;
+use App\Models\Learn;
+use App\Models\Tag;
 use Illuminate\Contracts\View\View;
 
 class GameController extends Controller
@@ -15,7 +19,11 @@ class GameController extends Controller
     public function index() : View
     {
         $games = Game::select('id', 'name', 'author', 'score', 'size', 'download', 'description')->orderBy('id')->get();
-        return view('game.index', compact('games'));
+        $creativities = Creativity::select('id', 'creativity_name AS name')->orderBy('id')->get();
+        $design = DesignForChildren::select('id', 'design_name AS name')->orderBy('id')->get();
+        $tags = Tag::select('id', 'tag_name AS name')->orderBy('id')->get();
+        $learns = Learn::select('id', 'learn_name AS name')->orderBy('id')->get();
+        return view('game.index', compact('games', 'creativities', 'design', 'tags', 'learns'));
     }
 
     /**
@@ -31,7 +39,7 @@ class GameController extends Controller
      */
     public function store(StoreGameRequest $request)
     {
-        //
+        dd($request->game_creativity);
     }
 
     /**

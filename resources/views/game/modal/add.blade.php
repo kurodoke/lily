@@ -55,11 +55,11 @@
                                        <label
                                            class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-white shadow"
                                            data-kt-image-input-action="change" data-bs-toggle="tooltip"
-                                           data-bs-dismiss="click" title="Change avatar">
+                                           data-bs-dismiss="click" title="Ganti Gambar">
                                            <i class="bi bi-pencil-fill fs-7"></i>
 
                                            <!--begin::Inputs-->
-                                           <input type="file" name="avatar" accept=".png, .jpg, .jpeg" />
+                                           <input type="file" name="game_image" accept=".png, .jpg, .jpeg" />
                                            <input type="hidden" name="avatar_remove" />
                                            <!--end::Inputs-->
                                        </label>
@@ -69,7 +69,7 @@
                                        <span
                                            class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-white shadow"
                                            data-kt-image-input-action="cancel" data-bs-toggle="tooltip"
-                                           data-bs-dismiss="click" title="Cancel avatar">
+                                           data-bs-dismiss="click" title="Batal Masukkan Gambar">
                                            <i class="bi bi-x fs-2"></i>
                                        </span>
                                        <!--end::Cancel button-->
@@ -78,7 +78,7 @@
                                        <span
                                            class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-white shadow"
                                            data-kt-image-input-action="remove" data-bs-toggle="tooltip"
-                                           data-bs-dismiss="click" title="Remove avatar">
+                                           data-bs-dismiss="click" title="Hapus Gambar">
                                            <i class="bi bi-x fs-2"></i>
                                        </span>
                                        <!--end::Remove button-->
@@ -122,7 +122,7 @@
                                    </label>
                                    <!--end::Label-->
                                    <input type="text" class="form-control form-control-solid"
-                                       placeholder="Masukkan Nama Author" name="game_author" />
+                                       placeholder="Masukkan Nama Author" name="game_download" />
                                </div>
                                <!--end::Input group-->
 
@@ -135,7 +135,7 @@
                                    </label>
                                    <!--end::Label-->
                                    <input type="text" class="form-control form-control-solid"
-                                       placeholder="Masukkan Nama Author" name="game_author" />
+                                       placeholder="Masukkan Nama Author" name="game_size" />
                                </div>
                                <!--end::Input group-->
 
@@ -143,7 +143,7 @@
                                <div class="col-md-12 d-flex flex-column mb-8 fv-row">
                                    <!--begin::Label-->
                                    <label class="d-flex align-items-center fs-6 fw-bold mb-2">
-                                       <span>Deskripsi Game</span>
+                                       <span class="required">Deskripsi Game</span>
 
                                    </label>
                                    <!--end::Label-->
@@ -156,12 +156,12 @@
                                <div class="col-md-12 d-flex flex-column mb-8 fv-row">
                                    <!--begin::Label-->
                                    <label class="d-flex align-items-center fs-6 fw-bold mb-2">
-                                       <span class="">Umur</span>
+                                       <span class="required">Umur</span>
 
                                    </label>
                                    <!--end::Label-->
                                    <input type="text" class="form-control form-control-solid"
-                                       placeholder="Masukkan Umur Game" name="game_name" />
+                                       placeholder="Masukkan Umur Game" name="game_age" />
                                </div>
                                <!--end::Input group-->
 
@@ -173,8 +173,8 @@
 
                                    </label>
                                    <!--end::Label-->
-                                   <input type="text" class="form-control form-control-solid"
-                                       placeholder="Masukkan Nama Game" name="game_name" />
+                                   <input type="text" class="form-control form-control-solid overflow-hidden"
+                                       placeholder="Berikan Tag Pada Game" name="game_tag" id="kt_tagify_tag"/>
                                </div>
                                <!--end::Input group-->
                                <!--begin::Input group-->
@@ -185,8 +185,8 @@
 
                                    </label>
                                    <!--end::Label-->
-                                   <input type="text" class="form-control form-control-solid"
-                                       placeholder="Masukkan Nama Game" name="game_name" />
+                                   <input type="text" class="form-control form-control-solid overflow-hidden"
+                                       placeholder="Masukkan Manfaat dari Game" name="game_design" id="kt_tagify_design" />
                                </div>
                                <!--end::Input group-->
                                <!--begin::Input group-->
@@ -197,8 +197,8 @@
 
                                    </label>
                                    <!--end::Label-->
-                                   <input type="text" class="form-control form-control-solid"
-                                       placeholder="Masukkan Nama Game" name="game_name" />
+                                   <input type="text" class="form-control form-control-solid overflow-hidden"
+                                       placeholder="Masukkan Kreativitas Anak" name="game_creativity" id="kt_tagify_creativity" />
                                </div>
                                <!--end::Input group-->
                                <!--begin::Input group-->
@@ -209,8 +209,8 @@
 
                                    </label>
                                    <!--end::Label-->
-                                   <input type="text" class="form-control form-control-solid"
-                                       placeholder="Masukkan Nama Game" name="game_name" />
+                                   <input type="text" class="form-control form-control-solid overflow-hidden"
+                                       placeholder="Masukkan Hasil Pembelajaran" name="game_learn" id="kt_tagify_learn" />
                                </div>
                                <!--end::Input group-->
                            </div>
