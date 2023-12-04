@@ -19,6 +19,7 @@ return new class extends Migration
             $table->integer('size');
             $table->string('download');
             $table->string('description');
+            $table->string('logo_filename');
             $table->timestamps();
         });
     }

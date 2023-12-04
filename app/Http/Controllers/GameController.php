@@ -8,9 +8,13 @@ use App\Http\Requests\UpdateGameRequest;
 use App\Models\Creativity;
 use App\Models\DesignForChildren;
 use App\Models\GameCreativity;
+use App\Models\GameDesignForChildren;
+use App\Models\GameLearn;
+use App\Models\GameTag;
 use App\Models\Learn;
 use App\Models\Tag;
 use Illuminate\Contracts\View\View;
+use Illuminate\Http\RedirectResponse;
 
 use function PHPUnit\Framework\isNull;
 
@@ -40,7 +44,7 @@ class GameController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreGameRequest $request)
+    public function store(StoreGameRequest $request) : RedirectResponse
     {
         $validated = $request->validated();
 
@@ -58,6 +62,7 @@ class GameController extends Controller
                 'download' => $validated['game_download'],
                 'size' => $validated['game_size'],
                 'description' => $validated['game_description'],
+                'logo_filename' => $game_image_filename,
             ]);
 
             for ( $i = 0; $i < count($game_creativities); $i++ ) {
@@ -66,10 +71,31 @@ class GameController extends Controller
                     'creativity_id' => $game_creativities[$i],
                 ]);
             }
-        } catch (\Throwable $th) {
-            dd($th);
-        }
+            for ( $i = 0; $i < count($game_design); $i++ ) {
+                GameDesignForChildren::create([
+                    'game_id' => $game_instance->id,
+                    'design_id' => $game_design[$i],
+                ]);
+            }
+            for ( $i = 0; $i < count($game_tags); $i++ ) {
+                GameTag::create([
+                    'game_id' => $game_instance->id,
+                    'tag_id' => $game_tags[$i],
+                ]);
+            }
+            for ( $i = 0; $i < count($game_learns); $i++ ) {
+                GameLearn::create([
+                    'game_id' => $game_instance->id,
+                    'learn_id' => $game_learns[$i],
+                ]);
+            }
+            
 
+        } catch (\Throwable $th) {
+            $game_instance->delete();
+            return redirect()->back()->with('error', ['title' => 'Tambah','message' => 'Gagal Menambahkan']);
+        }
+        return redirect()->back()->with('success', ['title' => 'Tambah','message' => 'Berhasil Menambahkan']);
     }
 
     /**
