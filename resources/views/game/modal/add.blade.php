@@ -27,7 +27,7 @@
                    <div class="modal-body scroll-y px-10 px-lg-15 pt-0 pb-15">
                        <!--begin:Form-->
                        <form id="kt_modal_add_form" class="form" action="{{ route('admin.game.store') }}"
-                           method="POST">
+                           method="POST" enctype="multipart/form-data">
                            @csrf
                            <!--begin::Heading-->
                            <div class="mb-13 text-center">
@@ -44,9 +44,9 @@
                                <!--begin::Input group-->
                                <div class="col-md-12 d-flex flex-column mb-8 fv-row">
                                    <!--begin::Image input-->
-                                   <div class="image-input image-input-empty w-125px h-125px m-auto"
+                                   <div class="image-input image-input-empty w-125px h-125px m-auto bg-secondary"
                                        data-kt-image-input="true"
-                                       style="background-image: url(/assets/media/avatars/blank.png)">
+                                       style="background-image: url({{ asset('assets/media/icons/duotune/files/fil010.svg') }});">
                                        <!--begin::Image preview wrapper-->
                                        <div class="image-input-wrapper w-125px h-125px"></div>
                                        <!--end::Image preview wrapper-->
@@ -121,7 +121,7 @@
 
                                    </label>
                                    <!--end::Label-->
-                                   <input type="text" class="form-control form-control-solid"
+                                   <input type="number" class="form-control form-control-solid"
                                        placeholder="Masukkan Nama Author" name="game_download" />
                                </div>
                                <!--end::Input group-->
@@ -134,7 +134,7 @@
 
                                    </label>
                                    <!--end::Label-->
-                                   <input type="text" class="form-control form-control-solid"
+                                   <input type="number" class="form-control form-control-solid"
                                        placeholder="Masukkan Nama Author" name="game_size" />
                                </div>
                                <!--end::Input group-->
@@ -153,15 +153,74 @@
                                <!--end::Input group-->
 
                                <!--begin::Input group-->
-                               <div class="col-md-12 d-flex flex-column mb-8 fv-row">
+                               <div class="col-md-6 d-flex flex-column mb-8 fv-row">
                                    <!--begin::Label-->
                                    <label class="d-flex align-items-center fs-6 fw-bold mb-2">
                                        <span class="required">Umur</span>
 
                                    </label>
                                    <!--end::Label-->
-                                   <input type="text" class="form-control form-control-solid"
+                                   <input type="number" class="form-control form-control-solid"
                                        placeholder="Masukkan Umur Game" name="game_age" />
+                               </div>
+                               <!--end::Input group-->
+
+                               <!--begin::Input group-->
+                               <div class="col-md-6 d-flex flex-column mb-8 fv-row">
+                                   <!--begin::Label-->
+                                   <label class="d-flex align-items-center fs-6 fw-bold mb-2">
+                                       <span class="required">Score</span>
+                                   </label>
+                                   <div class="rating">
+                                       <!--begin::Reset rating-->
+                                       <label class="btn btn-light fw-bolder rating-label me-3"
+                                           for="kt_rating_input_0">
+                                           Reset
+                                       </label>
+                                       <input class="rating-input" name="game_rating" value="0" checked
+                                           type="radio" id="kt_rating_input_0" />
+                                       <!--end::Reset rating-->
+
+                                       <!--begin::Star 1-->
+                                       <label class="rating-label me-3" for="kt_rating_input_1">
+                                           <i class="bi bi-star-fill fs-5"></i>
+                                       </label>
+                                       <input class="rating-input" name="game_rating" value="1" type="radio"
+                                           id="kt_rating_input_1" />
+                                       <!--end::Star 1-->
+
+                                       <!--begin::Star 2-->
+                                       <label class="rating-label me-3" for="kt_rating_input_2">
+                                           <i class="bi bi-star-fill fs-5"></i>
+                                       </label>
+                                       <input class="rating-input" name="game_rating" value="2" type="radio"
+                                           id="kt_rating_input_2" />
+                                       <!--end::Star 2-->
+
+                                       <!--begin::Star 3-->
+                                       <label class="rating-label me-3" for="kt_rating_input_3">
+                                           <i class="bi bi-star-fill fs-5"></i>
+                                       </label>
+                                       <input class="rating-input" name="game_rating" value="3" type="radio"
+                                           id="kt_rating_input_3" />
+                                       <!--end::Star 3-->
+
+                                       <!--begin::Star 4-->
+                                       <label class="rating-label me-3" for="kt_rating_input_4">
+                                           <i class="bi bi-star-fill fs-5"></i>
+                                       </label>
+                                       <input class="rating-input" name="game_rating" value="4" type="radio"
+                                           id="kt_rating_input_4" />
+                                       <!--end::Star 4-->
+
+                                       <!--begin::Star 5-->
+                                       <label class="rating-label me-3" for="kt_rating_input_5">
+                                           <i class="bi bi-star-fill fs-5"></i>
+                                       </label>
+                                       <input class="rating-input" name="game_rating" value="5" type="radio"
+                                           id="kt_rating_input_5" />
+                                       <!--end::Star 5-->
+                                   </div>
                                </div>
                                <!--end::Input group-->
 
@@ -174,7 +233,7 @@
                                    </label>
                                    <!--end::Label-->
                                    <input type="text" class="form-control form-control-solid overflow-hidden"
-                                       placeholder="Berikan Tag Pada Game" name="game_tag" id="kt_tagify_tag"/>
+                                       placeholder="Berikan Tag Pada Game" name="game_tag" id="kt_tagify_tag" />
                                </div>
                                <!--end::Input group-->
                                <!--begin::Input group-->
@@ -186,7 +245,8 @@
                                    </label>
                                    <!--end::Label-->
                                    <input type="text" class="form-control form-control-solid overflow-hidden"
-                                       placeholder="Masukkan Manfaat dari Game" name="game_design" id="kt_tagify_design" />
+                                       placeholder="Masukkan Manfaat dari Game" name="game_design"
+                                       id="kt_tagify_design" />
                                </div>
                                <!--end::Input group-->
                                <!--begin::Input group-->
@@ -198,7 +258,8 @@
                                    </label>
                                    <!--end::Label-->
                                    <input type="text" class="form-control form-control-solid overflow-hidden"
-                                       placeholder="Masukkan Kreativitas Anak" name="game_creativity" id="kt_tagify_creativity" />
+                                       placeholder="Masukkan Kreativitas Anak" name="game_creativity"
+                                       id="kt_tagify_creativity" />
                                </div>
                                <!--end::Input group-->
                                <!--begin::Input group-->
@@ -210,7 +271,8 @@
                                    </label>
                                    <!--end::Label-->
                                    <input type="text" class="form-control form-control-solid overflow-hidden"
-                                       placeholder="Masukkan Hasil Pembelajaran" name="game_learn" id="kt_tagify_learn" />
+                                       placeholder="Masukkan Hasil Pembelajaran" name="game_learn"
+                                       id="kt_tagify_learn" />
                                </div>
                                <!--end::Input group-->
                            </div>

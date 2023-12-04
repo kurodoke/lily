@@ -7,9 +7,12 @@ use App\Http\Requests\StoreGameRequest;
 use App\Http\Requests\UpdateGameRequest;
 use App\Models\Creativity;
 use App\Models\DesignForChildren;
+use App\Models\GameCreativity;
 use App\Models\Learn;
 use App\Models\Tag;
 use Illuminate\Contracts\View\View;
+
+use function PHPUnit\Framework\isNull;
 
 class GameController extends Controller
 {
@@ -39,7 +42,34 @@ class GameController extends Controller
      */
     public function store(StoreGameRequest $request)
     {
-        dd($request->game_creativity);
+        $validated = $request->validated();
+
+        $game_image_filename = $validated['game_image']->store("public/game_image");
+        $game_creativities = (array_key_exists('game_creativity', $validated)) ?  explode(",", $validated['game_creativity']) : null;
+        $game_design = (array_key_exists('game_design', $validated)) ? explode(",", $validated['game_design']) : null;
+        $game_tags = (array_key_exists('game_tag', $validated)) ? explode(",", $validated['game_tag']) : null;
+        $game_learns = (array_key_exists('game_learn', $validated)) ? explode(",", $validated['game_learn']) : null;
+
+        try {
+            $game_instance =  Game::create([
+                'name' => $validated['game_name'],
+                'author' => $validated['game_author'],
+                'score' => $validated['game_rating'],
+                'download' => $validated['game_download'],
+                'size' => $validated['game_size'],
+                'description' => $validated['game_description'],
+            ]);
+
+            for ( $i = 0; $i < count($game_creativities); $i++ ) {
+                GameCreativity::create([
+                    'game_id' => $game_instance->id,
+                    'creativity_id' => $game_creativities[$i],
+                ]);
+            }
+        } catch (\Throwable $th) {
+            dd($th);
+        }
+
     }
 
     /**

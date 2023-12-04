@@ -10,6 +10,8 @@ class Game extends Model
 {
     use HasFactory;
 
+    protected $fillable = ['name', 'author', 'size', 'download', 'score', 'description'];
+
     function tags() : BelongsToMany {
         return $this->belongsToMany(Tag::class, 'game_tags', 'game_id', 'tag_id');
     }

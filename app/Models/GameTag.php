@@ -8,4 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class GameTag extends Model
 {
     use HasFactory;
+
+    protected $fillable = ['game_id', 'tag_id'];
 }
