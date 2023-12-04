@@ -19,10 +19,10 @@ class GameController extends Controller
     public function index() : View
     {
         $games = Game::select('id', 'name', 'author', 'score', 'size', 'download', 'description')->orderBy('id')->get();
-        $creativities = Creativity::select('id', 'creativity_name AS name')->orderBy('id')->get();
-        $design = DesignForChildren::select('id', 'design_name AS name')->orderBy('id')->get();
-        $tags = Tag::select('id', 'tag_name AS name')->orderBy('id')->get();
-        $learns = Learn::select('id', 'learn_name AS name')->orderBy('id')->get();
+        $creativities = Creativity::select('id AS value', 'creativity_name AS name')->orderBy('id')->get();
+        $design = DesignForChildren::select('id AS value', 'design_name AS name')->orderBy('id')->get();
+        $tags = Tag::select('id AS value', 'tag_name AS name')->orderBy('id')->get();
+        $learns = Learn::select('id AS value', 'learn_name AS name')->orderBy('id')->get();
         return view('game.index', compact('games', 'creativities', 'design', 'tags', 'learns'));
     }
 
