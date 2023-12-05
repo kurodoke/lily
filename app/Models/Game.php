@@ -26,7 +26,7 @@ class Game extends Model
     }
     
     function creativities() : BelongsToMany {
-        return $this->belongsToMany(Creativity::class, 'game_creativites', 'game_id', 'creativity_id');
+        return $this->belongsToMany(Creativity::class, 'game_creativities', 'game_id', 'creativity_id');
     }
 
     function ages() : BelongsTo {

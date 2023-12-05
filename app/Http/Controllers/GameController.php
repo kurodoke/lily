@@ -116,8 +116,12 @@ class GameController extends Controller
             'code' => Response::HTTP_OK,
             'message' => 'success',
             'data' => [
-                'game' => $game,
-                'age' => $game->ages(),
+                'game' => Game::findOrFail($id),
+                'age' => $game->ages,
+                'creativity' => $game->creativities,
+                'learn' => $game->learns,
+                'tag' => $game->tags,
+                'design' => $game->designs,
             ],
         ]);
     }
