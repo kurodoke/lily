@@ -15,12 +15,17 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('author');
+            $table->foreignId('age_id')->constrained(
+                table: 'Children_ages'
+            )->onDelete('cascade');
             $table->integer('score');
             $table->integer('size');
             $table->string('download');
             $table->string('description');
             $table->string('logo_filename');
             $table->timestamps();
+
+            $table->unique(['name', 'author']);
         });
     }
 

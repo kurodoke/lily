@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title', 'Pengelolaan data')
-@section('subtitle', 'Manfaat Game')
+@section('subtitle', 'Design Game')
 
 @section('content')
 
@@ -9,8 +9,8 @@
         <!--begin::Container-->
         <div class="container-xxl" id="kt_content_container">
 
-            @include('managemen.manfaat.flash.error')
-            @include('managemen.manfaat.flash.success')
+            @include('managemen.design.flash.error')
+            @include('managemen.design.flash.success')
 
             <!--begin::Table-->
             <div class="card card-flush mt-6 mt-xl-9">
@@ -18,9 +18,9 @@
                 <div class="card-header mt-5">
                     <!--begin::Card title-->
                     <div class="card-title flex-column">
-                        <h3 class="fw-bolder mb-1">Tabel Manfaat</h3>
+                        <h3 class="fw-bolder mb-1">Tabel Design</h3>
                         <!--begin::Description-->
-                        <div class="d-flex flex-wrap fw-bold mb-4 fs-5 text-gray-400">Pengelolaan data manfaat - manfaat yang ada pada game</div>
+                        <div class="d-flex flex-wrap fw-bold mb-4 fs-5 text-gray-400">Pengelolaan data design - design yang ada pada game</div>
                         <!--end::Description-->
                     </div>
                     <div class="">
@@ -28,7 +28,7 @@
                         <!--begin::Actions-->
                         <div class="d-flex mb-4">
                             <a href="#" class="btn btn-sm btn-warning me-3" data-bs-toggle="modal"
-                                data-bs-target="#kt_modal_add">Tambah Manfaat</a>
+                                data-bs-target="#kt_modal_add">Tambah Design</a>
                             <!--begin::Menu-->
                         </div>
                         <!--end::Actions-->
@@ -58,7 +58,7 @@
                                     </div>
                                     <!--end::Number-->
                                     <!--begin::Label-->
-                                    <div class="fw-bold fs-6 text-gray-400">Total Manfaat</div>
+                                    <div class="fw-bold fs-6 text-gray-400">Total Design</div>
                                     <!--end::Label-->
                                 </div>
                                 <!--end::Stat-->
@@ -81,7 +81,7 @@
                             <thead class="fs-7 text-gray-400 text-uppercase">
                                 <tr>
                                     <th class="fw-bolder">#</th>
-                                    <th class="min-w-150px">Manfaat</th>
+                                    <th class="min-w-150px">Design</th>
                                     <th class="min-w-150px">Detail</th>
                                 </tr>
                             </thead>
@@ -124,12 +124,12 @@
 
         </div>
     </div>
-    @include('managemen.manfaat.modal.add')
-    @include('managemen.manfaat.modal.edit')
-    @include('managemen.manfaat.modal.delete')
+    @include('managemen.design.modal.add')
+    @include('managemen.design.modal.edit')
+    @include('managemen.design.modal.delete')
 
 
 @endsection
 
 
-@include('managemen.manfaat.script')
+@include('managemen.design.script')

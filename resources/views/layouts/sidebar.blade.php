@@ -70,11 +70,11 @@
                             </a>
                         </div>
                         <div class="menu-item">
-                            <a class="menu-link {{ request()->routeIs('admin.managemen.manfaat.index') ? 'active' : '' }}" href="{{ route('admin.managemen.manfaat.index') }}">
+                            <a class="menu-link {{ request()->routeIs('admin.managemen.design.index') ? 'active' : '' }}" href="{{ route('admin.managemen.design.index') }}">
                                 <span class="menu-bullet">
                                     <span class="bullet bullet-dot"></span>
                                 </span>
-                                <span class="menu-title">Manfaat Game</span>
+                                <span class="menu-title">Design Game</span>
                             </a>
                         </div>
                         <div class="menu-item">

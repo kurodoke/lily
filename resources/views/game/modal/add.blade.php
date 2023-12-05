@@ -59,7 +59,7 @@
                                            <i class="bi bi-pencil-fill fs-7"></i>
 
                                            <!--begin::Inputs-->
-                                           <input type="file" name="game_image" accept=".png, .jpg, .jpeg" />
+                                           <input type="file" name="game_image" accept=".png, .jpg, .jpeg, .webp" />
                                            <input type="hidden" name="avatar_remove" />
                                            <!--end::Inputs-->
                                        </label>
@@ -122,7 +122,7 @@
                                    </label>
                                    <!--end::Label-->
                                    <input type="number" class="form-control form-control-solid"
-                                       placeholder="Masukkan Nama Author" name="game_download" />
+                                       placeholder="Masukkan Total Download" name="game_download" autocomplete="off"/>
                                </div>
                                <!--end::Input group-->
 
@@ -135,7 +135,7 @@
                                    </label>
                                    <!--end::Label-->
                                    <input type="number" class="form-control form-control-solid"
-                                       placeholder="Masukkan Nama Author" name="game_size" />
+                                       placeholder="Masukkan Ukuran Game (MB)" name="game_size" autocomplete="off" />
                                </div>
                                <!--end::Input group-->
 
@@ -160,8 +160,8 @@
 
                                    </label>
                                    <!--end::Label-->
-                                   <input type="number" class="form-control form-control-solid"
-                                       placeholder="Masukkan Umur Game" name="game_age" />
+                                   <input type="number" class="form-control form-control-solid overflow-hidden kt_tagify_age"
+                                       placeholder="Masukkan Umur Game" name="game_age" id=""/>
                                </div>
                                <!--end::Input group-->
 
@@ -232,21 +232,21 @@
 
                                    </label>
                                    <!--end::Label-->
-                                   <input type="text" class="form-control form-control-solid overflow-hidden"
-                                       placeholder="Berikan Tag Pada Game" name="game_tag" id="kt_tagify_tag" />
+                                   <input type="text" class="form-control form-control-solid overflow-hidden kt_tagify_tag"
+                                       placeholder="Berikan Tag Pada Game" name="game_tag" id="" />
                                </div>
                                <!--end::Input group-->
                                <!--begin::Input group-->
                                <div class="col-md-6 d-flex flex-column mb-8 fv-row">
                                    <!--begin::Label-->
                                    <label class="d-flex align-items-center fs-6 fw-bold mb-2">
-                                       <span class="">Manfaat Game</span>
+                                       <span class="">Design Game</span>
 
                                    </label>
                                    <!--end::Label-->
-                                   <input type="text" class="form-control form-control-solid overflow-hidden"
-                                       placeholder="Masukkan Manfaat dari Game" name="game_design"
-                                       id="kt_tagify_design" />
+                                   <input type="text" class="form-control form-control-solid overflow-hidden kt_tagify_design"
+                                       placeholder="Masukkan Design dari Game" name="game_design"
+                                       id="" />
                                </div>
                                <!--end::Input group-->
                                <!--begin::Input group-->
@@ -257,9 +257,9 @@
 
                                    </label>
                                    <!--end::Label-->
-                                   <input type="text" class="form-control form-control-solid overflow-hidden"
+                                   <input type="text" class="form-control form-control-solid overflow-hidden kt_tagify_creativity"
                                        placeholder="Masukkan Kreativitas Anak" name="game_creativity"
-                                       id="kt_tagify_creativity" />
+                                       id="" />
                                </div>
                                <!--end::Input group-->
                                <!--begin::Input group-->
@@ -270,9 +270,9 @@
 
                                    </label>
                                    <!--end::Label-->
-                                   <input type="text" class="form-control form-control-solid overflow-hidden"
+                                   <input type="text" class="form-control form-control-solid overflow-hidden kt_tagify_learn"
                                        placeholder="Masukkan Hasil Pembelajaran" name="game_learn"
-                                       id="kt_tagify_learn" />
+                                       id="" />
                                </div>
                                <!--end::Input group-->
                            </div>

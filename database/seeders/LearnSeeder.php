@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Learn;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -12,6 +13,14 @@ class LearnSeeder extends Seeder
      */
     public function run(): void
     {
-        //
+        Learn::create([
+            'learn_name' => 'Pembelajaran sosial'
+        ]);
+        Learn::create([
+            'learn_name' => 'Matematika'
+        ]);
+        Learn::create([
+            'learn_name' => 'Sains'
+        ]);
     }
 }

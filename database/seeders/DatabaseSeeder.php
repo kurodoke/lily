@@ -23,6 +23,10 @@ class DatabaseSeeder extends Seeder
             AdministratorSeeder::class,
             UserSeeder::class,
             ChildrenAgeSeeder::class,
+            CreativitySeeder::class,
+            DesignForChildrenSeeder::class,
+            LearnSeeder::class,
+            TagSeeder::class,
         ]);
     }
 }

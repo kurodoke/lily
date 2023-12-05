@@ -27,15 +27,15 @@
                    <div class="modal-body scroll-y px-10 px-lg-15 pt-0 pb-15">
                        <!--begin:Form-->
                        <form id="kt_modal_add_form" class="form"
-                           action="{{ route('admin.managemen.manfaat.store') }}" method="POST">
+                           action="{{ route('admin.managemen.design.store') }}" method="POST">
                            @csrf
                            <!--begin::Heading-->
                            <div class="mb-13 text-center">
                                <!--begin::Title-->
-                               <h1 class="mb-3">Tambah Manfaat</h1>
+                               <h1 class="mb-3">Tambah Design</h1>
                                <!--end::Title-->
                                <!--begin::Description-->
-                               <div class="text-muted fw-bold fs-5 mb-3">Tambahkan Manfaat - Manfaat untuk Game anak - anak
+                               <div class="text-muted fw-bold fs-5 mb-3">Tambahkan Design - Design untuk Game anak - anak
                                </div>
                                <!--end::Description-->
                            </div>
@@ -46,12 +46,12 @@
                                <div class="col-md-12 d-flex flex-column mb-8 fv-row">
                                    <!--begin::Label-->
                                    <label class="d-flex align-items-center fs-6 fw-bold mb-2">
-                                       <span class="required">Nama Manfaat</span>
+                                       <span class="required">Nama Design</span>
 
                                    </label>
                                    <!--end::Label-->
                                    <input type="text" class="form-control form-control-solid"
-                                       placeholder="Masukkan Nama Manfaat" name="design_name" />
+                                       placeholder="Masukkan Nama Design" name="design_name" />
                                </div>
                                <!--end::Input group-->
                            </div>

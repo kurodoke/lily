@@ -30,15 +30,17 @@
 
     <script>
         // data for tags input
-        let input__creativity = document.querySelector('#kt_tagify_creativity');
-        let input__design = document.querySelector('#kt_tagify_design');
-        let input__tags = document.querySelector('#kt_tagify_tag');
-        let input__learns = document.querySelector('#kt_tagify_learn');
+        let input__creativity = Array.from(document.querySelectorAll('.kt_tagify_creativity'));
+        let input__design = Array.from(document.querySelectorAll('.kt_tagify_design'));
+        let input__tags = Array.from(document.querySelectorAll('.kt_tagify_tag'));
+        let input__learns = Array.from(document.querySelectorAll('.kt_tagify_learn'));
+        let input__ages = Array.from(document.querySelectorAll('.kt_tagify_age'));
 
         let data_creativity = @json($creativities->all());
         let data_design = @json($design->all());
         let data_tags = @json($tags->all());
         let data_learns = @json($learns->all());
+        let data_ages = @json($ages->all());
 
         const options = {
             tagTextProp: 'name',
@@ -59,44 +61,67 @@
 
     <script>
         // init all the tags
-        const tag__creativity = new Tagify(input__creativity, {
-            ...options,
-            whitelist: data_creativity
+        input__creativity.map((input) => {
+            const tag = new Tagify(input, {
+                ...options,
+                whitelist: data_creativity
+            });
+            tag.on('add', function(e) {
+                if (e.detail.data.name === e.detail.data.value) {
+                    tag.removeTags(e.detail.tag);
+                }
+            })
         });
-        tag__creativity.on('add', function(e) {
-            if (e.detail.data.name === e.detail.data.value) {
-                tag__creativity.removeTags(e.detail.tag);
-            }
-        })
 
-        const tag__design = new Tagify(input__design, {
-            ...options,
-            whitelist: data_design
+        input__design.map((input) => {
+            const tag = new Tagify(input, {
+                ...options,
+                whitelist: data_design
+            });
+            tag.on('add', function(e) {
+                if (e.detail.data.name === e.detail.data.value) {
+                    tag.removeTags(e.detail.tag);
+                }
+            })
         });
-        tag__design.on('add', function(e) {
-            if (e.detail.data.name === e.detail.data.value) {
-                tag__design.removeTags(e.detail.tag);
-            }
-        })
 
-        const tag__tags = new Tagify(input__tags, {
-            ...options,
-            whitelist: data_tags
+        input__tags.map((input) => {
+            const tag = new Tagify(input, {
+                ...options,
+                whitelist: data_tags
+            });
+            tag.on('add', function(e) {
+                if (e.detail.data.name === e.detail.data.value) {
+                    tag.removeTags(e.detail.tag);
+                }
+            })
         });
-        tag__tags.on('add', function(e) {
-            if (e.detail.data.name === e.detail.data.value) {
-                tag__tags.removeTags(e.detail.tag);
-            }
-        })
 
-        const tag_learns = new Tagify(input__learns, {
-            ...options,
-            whitelist: data_learns
+        input__learns.map((input) => {
+            const tag = new Tagify(input, {
+                ...options,
+                whitelist: data_learns
+            });
+            tag.on('add', function(e) {
+                if (e.detail.data.name === e.detail.data.value) {
+                    tag.removeTags(e.detail.tag);
+                }
+            })
         });
-        tag_learns.on('add', function(e) {
-            if (e.detail.data.name === e.detail.data.value) {
-                tag_learns.removeTags(e.detail.tag);
-            }
-        })
+
+        input__ages.map((input) => {
+            const tag = new Tagify(input, {
+                ...options,
+                maxTags: 1,
+                whitelist: data_ages
+            });
+            tag.on('add', function(e) {
+                if (e.detail.data.name === e.detail.data.value) {
+                    tag.removeTags(e.detail.tag);
+                }
+            })
+        });
     </script>
+
+    @include('game.modal.script.detail')
 @endsection

@@ -31,7 +31,7 @@ Route::middleware('auth:admin')->name('admin.')->group(function () {
         Route::resource('kreatifitas', CreativityController::class)->except('create','show','edit');
     });
     Route::name('managemen.')->prefix('managemen')->group( function () {
-        Route::resource('manfaat', DesignForChildrenController::class)->except('create','show','edit');
+        Route::resource('design', DesignForChildrenController::class)->except('create','show','edit');
     });
     Route::name('managemen.')->prefix('managemen')->group( function () {
         Route::resource('pembelajaran', LearnController::class)->except('create','show','edit');

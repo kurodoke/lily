@@ -42,7 +42,7 @@ class StoreGameRequest extends FormRequest
             'game_download' => 'required|numeric',
             'game_size' => 'required|numeric',
             'game_description' => 'string',
-            'game_age' => 'numeric',
+            'game_age' => 'required',
             'game_tag' => '',
             'game_design' => '',
             'game_creativity' => '',

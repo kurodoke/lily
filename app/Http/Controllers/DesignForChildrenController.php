@@ -18,7 +18,7 @@ class DesignForChildrenController extends Controller
     public function index() : View
     {
         $design = DesignForChildren::select('id', 'design_name')->orderBy('id')->get();
-        return view('managemen.manfaat.index', compact('design'));
+        return view('managemen.design.index', compact('design'));
     }
 
     /**

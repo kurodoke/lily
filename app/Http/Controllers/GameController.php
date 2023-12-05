@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Game;
 use App\Http\Requests\StoreGameRequest;
 use App\Http\Requests\UpdateGameRequest;
+use App\Models\ChildrenAge;
 use App\Models\Creativity;
 use App\Models\DesignForChildren;
 use App\Models\GameCreativity;
@@ -14,9 +15,10 @@ use App\Models\GameTag;
 use App\Models\Learn;
 use App\Models\Tag;
 use Illuminate\Contracts\View\View;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Http\RedirectResponse;
-
-use function PHPUnit\Framework\isNull;
+use Illuminate\Http\Response;
+use Illuminate\Support\Facades\DB;
 
 class GameController extends Controller
 {
@@ -25,12 +27,14 @@ class GameController extends Controller
      */
     public function index() : View
     {
-        $games = Game::select('id', 'name', 'author', 'score', 'size', 'download', 'description')->orderBy('id')->get();
+        $games = Game::select('*')->orderBy('id')->get();
         $creativities = Creativity::select('id AS value', 'creativity_name AS name')->orderBy('id')->get();
         $design = DesignForChildren::select('id AS value', 'design_name AS name')->orderBy('id')->get();
         $tags = Tag::select('id AS value', 'tag_name AS name')->orderBy('id')->get();
         $learns = Learn::select('id AS value', 'learn_name AS name')->orderBy('id')->get();
-        return view('game.index', compact('games', 'creativities', 'design', 'tags', 'learns'));
+        $ages = ChildrenAge::select('id AS value', DB::raw("CONCAT(age_min, ' - ', age_max, ' Tahun') AS name"))->orderBy('id')->get();
+
+        return view('game.index', compact('games', 'creativities', 'design', 'tags', 'learns', 'ages'));
     }
 
     /**
@@ -49,10 +53,10 @@ class GameController extends Controller
         $validated = $request->validated();
 
         $game_image_filename = $validated['game_image']->store("public/game_image");
-        $game_creativities = (array_key_exists('game_creativity', $validated)) ?  explode(",", $validated['game_creativity']) : null;
-        $game_design = (array_key_exists('game_design', $validated)) ? explode(",", $validated['game_design']) : null;
-        $game_tags = (array_key_exists('game_tag', $validated)) ? explode(",", $validated['game_tag']) : null;
-        $game_learns = (array_key_exists('game_learn', $validated)) ? explode(",", $validated['game_learn']) : null;
+        $game_creativities = (!empty($validated['game_creativity'])) ?  explode(",", $validated['game_creativity']) : [];
+        $game_design = (!empty($validated['game_design'])) ? explode(",", $validated['game_design']) : [];
+        $game_tags = (!empty($validated['game_tag'])) ? explode(",", $validated['game_tag']) : [];
+        $game_learns = (!empty($validated['game_learn'])) ? explode(",", $validated['game_learn']) : [];
 
         try {
             $game_instance =  Game::create([
@@ -62,7 +66,8 @@ class GameController extends Controller
                 'download' => $validated['game_download'],
                 'size' => $validated['game_size'],
                 'description' => $validated['game_description'],
-                'logo_filename' => $game_image_filename,
+                'age_id' => $validated['game_age'],
+                'logo_filename' => explode('public/',$game_image_filename)[1],
             ]);
 
             for ( $i = 0; $i < count($game_creativities); $i++ ) {
@@ -92,7 +97,10 @@ class GameController extends Controller
             
 
         } catch (\Throwable $th) {
-            $game_instance->delete();
+            dd($th);
+            if(isset($game_instance)){
+                $game_instance->delete();
+            }
             return redirect()->back()->with('error', ['title' => 'Tambah','message' => 'Gagal Menambahkan']);
         }
         return redirect()->back()->with('success', ['title' => 'Tambah','message' => 'Berhasil Menambahkan']);
@@ -101,9 +109,17 @@ class GameController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Game $game)
+    public function show(string $id) : JsonResponse
     {
-        //
+        $game = Game::findOrFail($id);
+        return response()->json([
+            'code' => Response::HTTP_OK,
+            'message' => 'success',
+            'data' => [
+                'game' => $game,
+                'age' => $game->ages(),
+            ],
+        ]);
     }
 
     /**

@@ -4,7 +4,7 @@
 @section('subtitle', 'Game')
 
 @section('content')
-    
+
     <div class="content d-flex flex-column flex-column-fluid" id="kt_content">
         <!--begin::Container-->
         <div class="container-xxl" id="kt_content_container">
@@ -109,9 +109,9 @@
                                         <td>
                                             <div class="d-flex align-items-center">
                                                 <div class="symbol symbol-50px me-5">
-                                                    <span class="symbol-label bg-light">
-                                                        <img src="assets/media/svg/avatars/001-boy.svg"
-                                                            class="h-75 align-self-end" alt="">
+                                                    <span class="symbol-label bg-light overflow-hidden">
+                                                        <img src="{{ asset('storage/' . $game->logo_filename) }}"
+                                                            class="h-100" alt="">
                                                     </span>
                                                 </div>
                                                 <div class="d-flex justify-content-start flex-column">
@@ -124,8 +124,8 @@
                                         </td>
                                         <td>
                                             <p class="text-dark fw-bolder text-hover-primary d-block mb-1 fs-6">
-                                                {{ $game->download }}&pm;</p>
-                                            <span class="text-muted fw-bold text-muted d-block fs-7">Juta</span>
+                                                {{ number_format($game->download, 0, ',', '.'); }}&pm;</p>
+                                            <span class="text-muted fw-bold text-muted d-block fs-7">Download</span>
                                         </td>
                                         <td><a href="#"
                                                 class="text-dark fw-bolder text-hover-primary d-block mb-1 fs-6">{{ $game->size }}</a>
@@ -226,6 +226,7 @@
 
     @include('game.modal.add')
     @include('game.modal.edit')
+    @include('game.modal.detail')
     @include('game.modal.delete')
 
 @endsection

@@ -15,10 +15,10 @@ return new class extends Migration
             $table->id();
             $table->foreignId('game_id')->constrained(
                 table:'games'
-            );
+            )->onDelete('cascade');
             $table->foreignId('creativity_id')->constrained(
                 table:'creativities'
-            );
+            )->onDelete('cascade');
             $table->timestamps();
         });
     }

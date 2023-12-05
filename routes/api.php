@@ -3,6 +3,7 @@
 use App\Http\Controllers\ChildrenAgeController;
 use App\Http\Controllers\CreativityController;
 use App\Http\Controllers\DesignForChildrenController;
+use App\Http\Controllers\GameController;
 use App\Http\Controllers\LearnController;
 use App\Http\Controllers\TagController;
 use Illuminate\Http\Request;
@@ -26,7 +27,8 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::name('api.v1.')->prefix('v1')->group(function () {
     Route::resource("umur", ChildrenAgeController::class)->only('show');
     Route::resource("kreatifitas", CreativityController::class)->only('show');
-    Route::resource("manfaat", DesignForChildrenController::class)->only('show');
+    Route::resource("design", DesignForChildrenController::class)->only('show');
     Route::resource("pembelajaran", LearnController::class)->only('show');
     Route::resource("tag", TagController::class)->only('show');
+    Route::resource("game", GameController::class)->only('show');
 });
