@@ -7,10 +7,15 @@
         type: "doughnut",
         data: {
             datasets: [{
-                data: [30, 45, 25],
-                backgroundColor: ["#00A3FF", "#50CD89", "#E4E6EF"]
+                data: [
+                    {{count($games->where('score', 1))}}, 
+                    {{count($games->where('score', 2))}}, 
+                    {{count($games->where('score', 3))}},
+                    {{count($games->where('score', 4))}},
+                    {{count($games->where('score', 5))}}],
+                backgroundColor: ["#ecd0df", "#b0bfd2", "#9ebf88", "#e4e6ef", "#ffad0f"]
             }],
-            labels: ["Active", "Completed", "Yet to start"]
+            labels: ["score 1", "score 2", "score 3", "score 4", "score 5"]
         },
         options: {
             chart: {

@@ -97,7 +97,7 @@
                             </label>
                             <!--end::Label-->
                             <input type="text" class="form-control form-control-solid"
-                                placeholder="Masukkan Nama Game" name="game_name" />
+                                placeholder="Masukkan Nama Game" name="game_name" @readonly(true)/>
                         </div>
                         <!--end::Input group-->
 
@@ -110,7 +110,7 @@
                             </label>
                             <!--end::Label-->
                             <input type="text" class="form-control form-control-solid"
-                                placeholder="Masukkan Nama Author" name="game_author" />
+                                placeholder="Masukkan Nama Author" name="game_author" @readonly(true) />
                         </div>
                         <!--end::Input group-->
 

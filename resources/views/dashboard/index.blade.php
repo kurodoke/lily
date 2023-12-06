@@ -13,7 +13,7 @@
                         <!--begin::Card body-->
                         <div class="card-body p-9">
                             <!--begin::Heading-->
-                            <div class="fs-2hx fw-bolder">237</div>
+                            <div class="fs-2hx fw-bolder">{{ count($games) }}</div>
                             <div class="fs-4 fw-bold text-gray-400 mb-7">Total Game</div>
                             <!--end::Heading-->
                             <!--begin::Wrapper-->
@@ -27,23 +27,74 @@
                                 <div class="d-flex flex-column justify-content-center flex-row-fluid pe-11 mb-5">
                                     <!--begin::Label-->
                                     <div class="d-flex fs-6 fw-bold align-items-center mb-3">
-                                        <div class="bullet bg-primary me-3"></div>
-                                        <div class="text-gray-400">Active</div>
-                                        <div class="ms-auto fw-bolder text-gray-700">30</div>
+                                        <div class="bullet me-3" style="background-color: #ecd0df"></div>
+                                        <div class="rating">
+                                            @for ($i = 0; $i < 1; $i++)
+                                                <div class="rating-label me-2 checked">
+                                                    <i class="bi bi-star-fill fs-5"></i>
+                                                </div>
+                                            @endfor
+                                        </div>
+                                        <div class="ms-auto fw-bolder text-gray-700">{{ count($games->where('score', 1)) }}
+                                        </div>
                                     </div>
                                     <!--end::Label-->
                                     <!--begin::Label-->
                                     <div class="d-flex fs-6 fw-bold align-items-center mb-3">
-                                        <div class="bullet bg-success me-3"></div>
-                                        <div class="text-gray-400">Completed</div>
-                                        <div class="ms-auto fw-bolder text-gray-700">45</div>
+                                        <div class="bullet me-3" style="background-color: #b0bfd2"></div>
+                                        <div class="rating">
+                                            @for ($i = 0; $i < 2; $i++)
+                                                <div class="rating-label me-2 checked">
+                                                    <i class="bi bi-star-fill fs-5"></i>
+                                                </div>
+                                            @endfor
+                                        </div>
+                                        <div class="ms-auto fw-bolder text-gray-700">{{ count($games->where('score', 2)) }}
+                                        </div>
                                     </div>
                                     <!--end::Label-->
                                     <!--begin::Label-->
-                                    <div class="d-flex fs-6 fw-bold align-items-center">
-                                        <div class="bullet bg-gray-300 me-3"></div>
-                                        <div class="text-gray-400">Yet to start</div>
-                                        <div class="ms-auto fw-bolder text-gray-700">25</div>
+                                    <div class="d-flex fs-6 fw-bold align-items-center mb-3">
+                                        <div class="bullet me-3" style="background-color: #9ebf88"></div>
+                                        <div class="rating">
+                                            @for ($i = 0; $i < 3; $i++)
+                                                <div class="rating-label me-2 checked">
+                                                    <i class="bi bi-star-fill fs-5"></i>
+                                                </div>
+                                            @endfor
+                                        </div>
+                                        <div class="ms-auto fw-bolder text-gray-700">{{ count($games->where('score', 3)) }}
+                                        </div>
+                                    </div>
+                                    <!--end::Label-->
+
+                                    <!--begin::Label-->
+                                    <div class="d-flex fs-6 fw-bold align-items-center mb-3">
+                                        <div class="bullet me-3" style="background-color: #e4e6ef"></div>
+                                        <div class="rating">
+                                            @for ($i = 0; $i < 4; $i++)
+                                                <div class="rating-label me-2 checked">
+                                                    <i class="bi bi-star-fill fs-5"></i>
+                                                </div>
+                                            @endfor
+                                        </div>
+                                        <div class="ms-auto fw-bolder text-gray-700">{{ count($games->where('score', 4)) }}
+                                        </div>
+                                    </div>
+                                    <!--end::Label-->
+
+                                    <!--begin::Label-->
+                                    <div class="d-flex fs-6 fw-bold align-items-center mb-3">
+                                        <div class="bullet me-3" style="background-color: #ffad0f"></div>
+                                        <div class="rating">
+                                            @for ($i = 0; $i < 5; $i++)
+                                                <div class="rating-label me-2 checked">
+                                                    <i class="bi bi-star-fill fs-5"></i>
+                                                </div>
+                                            @endfor
+                                        </div>
+                                        <div class="ms-auto fw-bolder text-gray-700">{{ count($games->where('score', 5)) }}
+                                        </div>
                                     </div>
                                     <!--end::Label-->
                                 </div>
@@ -88,55 +139,46 @@
                                     <!--end::Table head-->
                                     <!--begin::Table body-->
                                     <tbody>
-                                        <tr>
-                                            <td>
-                                                <div class="d-flex align-items-center">
-                                                    <div class="symbol symbol-50px me-5">
-                                                        <span class="symbol-label bg-light">
-                                                            <img src="assets/media/svg/avatars/001-boy.svg"
-                                                                class="h-75 align-self-end" alt="">
-                                                        </span>
+                                        @foreach ($_games as $game)
+                                            <tr>
+                                                <td>
+                                                    <div class="d-flex align-items-center">
+                                                        <div class="symbol symbol-50px me-5">
+                                                            <span class="symbol-label bg-light overflow-hidden">
+                                                                <img src="{{ asset('storage/' . $game->logo_filename) }}"
+                                                                    class="h-100" alt="">
+                                                            </span>
+                                                        </div>
+                                                        <div class="d-flex justify-content-start flex-column">
+                                                            <a href="#"
+                                                                class="text-dark fw-bolder text-hover-primary mb-1 fs-6">{{ $game->name }}</a>
+                                                            <span
+                                                                class="text-muted fw-bold text-muted d-block fs-7">{{ $game->author }}</span>
+                                                        </div>
                                                     </div>
-                                                    <div class="d-flex justify-content-start flex-column">
-                                                        <a href="#"
-                                                            class="text-dark fw-bolder text-hover-primary mb-1 fs-6">Brad
-                                                            Simmons</a>
-                                                        <span class="text-muted fw-bold text-muted d-block fs-7">HTML, JS,
-                                                            ReactJS</span>
+                                                </td>
+                                                <td>
+                                                    <a href="#"
+                                                        class="text-dark fw-bolder text-hover-primary d-block mb-1 fs-6">{{ number_format($game->download, 0, ',', '.') }}&pm;</a>
+                                                    <span class="text-muted fw-bold text-muted d-block fs-7">Download</span>
+                                                </td>
+                                                <td>
+                                                    <a href="#"
+                                                        class="text-dark fw-bolder text-hover-primary d-block mb-1 fs-6">{{ $game->size }}</a>
+                                                    <span class="text-muted fw-bold text-muted d-block fs-7">MB</span>
+                                                </td>
+                                                <td>
+                                                    <div class="rating">
+                                                        @for ($i = 0; $i < 5; $i++)
+                                                            <div
+                                                                class="rating-label me-2 {{ $i < $game->score ? 'checked' : '' }}">
+                                                                <i class="bi bi-star-fill fs-5"></i>
+                                                            </div>
+                                                        @endfor
                                                     </div>
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <a href="#"
-                                                    class="text-dark fw-bolder text-hover-primary d-block mb-1 fs-6">$8,000,000</a>
-                                                <span class="text-muted fw-bold text-muted d-block fs-7">Pending</span>
-                                            </td>
-                                            <td>
-                                                <a href="#"
-                                                    class="text-dark fw-bolder text-hover-primary d-block mb-1 fs-6">126</a>
-                                                <span class="text-muted fw-bold text-muted d-block fs-7">Mb</span>
-                                            </td>
-                                            <td>
-                                                <div class="rating">
-                                                    <div class="rating-label me-2 checked">
-                                                        <i class="bi bi-star-fill fs-5"></i>
-                                                    </div>
-                                                    <div class="rating-label me-2 checked">
-                                                        <i class="bi bi-star-fill fs-5"></i>
-                                                    </div>
-                                                    <div class="rating-label me-2 checked">
-                                                        <i class="bi bi-star-fill fs-5"></i>
-                                                    </div>
-                                                    <div class="rating-label me-2 checked">
-                                                        <i class="bi bi-star-fill fs-5"></i>
-                                                    </div>
-                                                    <div class="rating-label me-2 checked">
-                                                        <i class="bi bi-star-fill fs-5"></i>
-                                                    </div>
-                                                </div>
-                                                <span class="text-muted fw-bold text-muted d-block fs-7 mt-1">Best Rated</span>
-                                            </td>
-                                        </tr>
+                                                </td>
+                                            </tr>
+                                        @endforeach
                                     </tbody>
                                     <!--end::Table body-->
                                 </table>

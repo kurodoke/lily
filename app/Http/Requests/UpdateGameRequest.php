@@ -27,16 +27,10 @@ class UpdateGameRequest extends FormRequest
             'game_name' => [
                 'required',
                 'string',
-                Rule::unique('games', 'name')->where(function ($query) {
-                    return $query->where('author', $this->game_author);
-                }),
             ],
             'game_author' => [
                 'required',
                 'string',
-                Rule::unique('games', 'author')->where(function ($query) {
-                    return $query->where('name', $this->game_name);
-                }),
             ],
             'game_rating' => 'required|numeric',
             'game_download' => 'required|numeric',
