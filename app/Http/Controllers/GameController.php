@@ -19,6 +19,7 @@ use Illuminate\Http\JsonResponse;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
 
 class GameController extends Controller
 {
@@ -101,7 +102,7 @@ class GameController extends Controller
             if(isset($game_instance)){
                 $game_instance->delete();
             }
-            return redirect()->back()->with('error', ['title' => 'Tambah','message' => 'Gagal Menambahkan']);
+            return redirect()->back()->with('error', ['title' => 'Tambah','message' => 'Aksi Gagal']);
         }
         return redirect()->back()->with('success', ['title' => 'Tambah','message' => 'Berhasil Menambahkan']);
     }
@@ -137,16 +138,66 @@ class GameController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateGameRequest $request, Game $game)
+    public function update(UpdateGameRequest $request, string $id) : RedirectResponse
     {
-        //
+        $validated = $request->validated();
+        $game = Game::findOrFail($id);
+
+        $game_creativities = (!empty($validated['game_creativity'])) ?  explode(",", $validated['game_creativity']) : [];
+        $game_design = (!empty($validated['game_design'])) ? explode(",", $validated['game_design']) : [];
+        $game_tags = (!empty($validated['game_tag'])) ? explode(",", $validated['game_tag']) : [];
+        $game_learns = (!empty($validated['game_learn'])) ? explode(",", $validated['game_learn']) : [];
+
+        try {
+            $game->update([
+                'name' => $validated['game_name'],
+                'author' => $validated['game_author'],
+                'score' => $validated['game_rating'],
+                'download' => $validated['game_download'],
+                'size' => $validated['game_size'],
+                'description' => $validated['game_description'],
+                'age_id' => $validated['game_age'],
+            ]);
+    
+    
+            $game->creativities()->sync($game_creativities);
+    
+            $game->designs()->sync($game_design);
+    
+            $game->tags()->sync($game_tags);
+    
+            $game->learns()->sync($game_learns);
+    
+    
+            if(isset($validated['game_image'])){
+                $game_image_filename = $validated['game_image']->store("public/game_image");
+    
+                Storage::delete('public/' . $game->logo_filename);
+    
+                $game->update([
+                    'logo_filename' => explode('public/', $game_image_filename)[1],
+                ]);
+            };
+        } catch (\Throwable $th) {
+           dd($th);
+           return redirect()->back()->with('error', ['title' => 'Edit','message' => 'Gagal Mengedit']);
+        }
+        return redirect()->back()->with('success', ['title' => 'Edit','message' => 'Berhasil Mengedit']);
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Game $game)
+    public function destroy(string $id) : RedirectResponse
     {
-        //
+        $game = Game::findOrFail($id);
+        try {
+            Storage::delete('public/' . $game->logo_filename);
+            $game->delete();
+        } catch (\Throwable $th) {
+            dd($th);
+            return redirect()->back()->with('error', ['title' => 'Hapus','message' => 'Gagal Menghapus']);
+        }
+        return redirect()->back()->with('success', ['title' => 'Hapus','message' => 'Berhasil Menghapus']);
     }
 }

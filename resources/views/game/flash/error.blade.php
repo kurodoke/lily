@@ -1,4 +1,4 @@
-@error('learn_name')
+@if($errors->any())
     <div class="alert alert-dismissible alert-danger d-flex flex-center">
         <!--begin::Svg Icon | path: assets/media/icons/duotune/general/gen034.svg-->
         <span class="svg-icon svg-icon-danger svg-icon-2hx"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
@@ -17,7 +17,11 @@
             <!--end::Title-->
 
             <!--begin::Content-->
-            <span>{{ $message }}</span>
+            <ul class="mb-0">
+                @foreach($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
             <!--end::Content-->
         </div>
 
@@ -36,4 +40,4 @@
         </button>
         <!--end::Close-->
     </div>
-@enderror
+@endif

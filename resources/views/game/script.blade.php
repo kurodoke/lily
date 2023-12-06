@@ -55,4 +55,6 @@
 
     @include('game.modal.script.add')
     @include('game.modal.script.detail')
+    @include('game.modal.script.edit')
+    @include('game.modal.script.delete')
 @endsection

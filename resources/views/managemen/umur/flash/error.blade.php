@@ -13,7 +13,7 @@
 
         <div class="d-flex flex-column ps-4">
             <!--begin::Title-->
-            <h4 class="mb-1 text-danger">Gagal Menambahkan</h4>
+            <h4 class="mb-1 text-danger">Aksi Gagal</h4>
             <!--end::Title-->
 
             <!--begin::Content-->
@@ -52,7 +52,7 @@
 
         <div class="d-flex flex-column ps-4">
             <!--begin::Title-->
-            <h4 class="mb-1 text-danger">Gagal Menambahkan</h4>
+            <h4 class="mb-1 text-danger">Aksi Gagal</h4>
             <!--end::Title-->
 
             <!--begin::Content-->
