@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
-@section('title', 'Pengelolaan data')
-@section('subtitle', 'Admin ➞ Pengelolaan data ➞ Umur Game')
+@section('title', 'User')
+@section('subtitle', 'Admin ➞ User')
 
 @section('content')
 
@@ -9,8 +9,8 @@
         <!--begin::Container-->
         <div class="container-xxl" id="kt_content_container">
 
-            @include('managemen.umur.flash.error')
-            @include('managemen.umur.flash.success')
+            @include('user.flash.error')
+            @include('user.flash.success')
 
             <!--begin::Table-->
             <div class="card card-flush mt-6 mt-xl-9">
@@ -18,21 +18,14 @@
                 <div class="card-header mt-5">
                     <!--begin::Card title-->
                     <div class="card-title flex-column">
-                        <h3 class="fw-bolder mb-1">Tabel Umur</h3>
+                        <h3 class="fw-bolder mb-1">Tabel User</h3>
                         <!--begin::Description-->
-                        <div class="d-flex flex-wrap fw-bold mb-4 fs-5 text-gray-400">Pengelolaan data batasan
-                            umur anak - anak pada game</div>
+                        <div class="d-flex flex-wrap fw-bold mb-4 fs-5 text-gray-400">List user yang terdaftar pada sistem
+                        </div>
                         <!--end::Description-->
                     </div>
                     <div class="">
 
-                        <!--begin::Actions-->
-                        <div class="d-flex mb-4">
-                            <a href="#" class="btn btn-sm btn-warning me-3" data-bs-toggle="modal"
-                                data-bs-target="#kt_modal_add">Tambah Umur</a>
-                            <!--begin::Menu-->
-                        </div>
-                        <!--end::Actions-->
                         <!--begin::Info-->
                         <div class="d-flex flex-wrap justify-content-start">
                             <!--begin::Stats-->
@@ -54,12 +47,12 @@
                                             </svg></span>
                                         <!--end::Svg Icon-->
                                         <div class="fs-4 fw-bolder" data-kt-countup="true"
-                                            data-kt-countup-value="{{ $ages->count() }}">0
+                                            data-kt-countup-value="{{ $users->count() }}">0
                                         </div>
                                     </div>
                                     <!--end::Number-->
                                     <!--begin::Label-->
-                                    <div class="fw-bold fs-6 text-gray-400">Total Umur</div>
+                                    <div class="fw-bold fs-6 text-gray-400">Total User</div>
                                     <!--end::Label-->
                                 </div>
                                 <!--end::Stat-->
@@ -73,6 +66,24 @@
                 <!--end::Card header-->
                 <!--begin::Card body-->
                 <div class="card-body pt-0">
+                    <!--begin::Search-->
+                    <div class="d-flex align-items-center position-relative my-1">
+                        <!--begin::Svg Icon | path: assets/media/icons/duotune/general/gen021.svg-->
+                        <span class="svg-icon svg-icon-muted svg-icon-2 ms-6 position-absolute">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none">
+                                <rect opacity="0.5" x="17.0365" y="15.1223" width="8.15546" height="2" rx="1"
+                                    transform="rotate(45 17.0365 15.1223)" fill="black" />
+                                <path
+                                    d="M11 19C6.55556 19 3 15.4444 3 11C3 6.55556 6.55556 3 11 3C15.4444 3 19 6.55556 19 11C19 15.4444 15.4444 19 11 19ZM11 5C7.53333 5 5 7.53333 5 11C5 14.4667 7.53333 17 11 17C14.4667 17 17 14.4667 17 11C17 7.53333 14.4667 5 11 5Z"
+                                    fill="black" />
+                            </svg>
+                        </span>
+                        <!--end::Svg Icon-->
+                        <input type="text" data-kt-filter-datatable="search"
+                            class="form-control form-control-solid w-250px ps-15" placeholder="Cari User" />
+                    </div>
+                    <!--end::Search-->
                     <!--begin::Table container-->
                     <div class="table-responsive">
                         <!--begin::Table-->
@@ -82,15 +93,14 @@
                             <thead class="fs-7 text-gray-400 text-uppercase">
                                 <tr>
                                     <th class="fw-bolder">#</th>
-                                    <th class="min-w-150px">Umur minimal</th>
-                                    <th class="min-w-150px">Umur maksimal</th>
+                                    <th class="min-w-300px">User</th>
                                     <th class="min-w-150px">Detail</th>
                                 </tr>
                             </thead>
                             <!--end::Head-->
                             <!--begin::Body-->
                             <tbody class="fs-6">
-                                @foreach ($ages as $age)
+                                @foreach ($users as $user)
                                     <tr>
                                         <td>
                                             <!--begin::User-->
@@ -103,14 +113,28 @@
                                             </div>
                                             <!--end::User-->
                                         </td>
-                                        <td>{{ $age->age_min }}</td>
-                                        <td>{{ $age->age_max }}</td>
+                                        <td>
+                                            <div class="d-flex">
+                                                @php
+                                                    $array = ['info', 'success', 'warning', 'danger', 'primary', 'dark'];
+                                                    $color = $array[array_rand($array)];
+                                                @endphp
+                                                <div class="symbol symbol-50px me-5 symbol-circle">
+                                                    <span
+                                                        class="symbol-label fs-2x fw-bold text-{{$color}} bg-light-{{$color}}">{{ strtoupper(substr($user->name, 0, 1)) }}</span>
+                                                </div>
+                                                <div class="d-flex justify-content-start flex-column ms-2">
+                                                    <a href="#"
+                                                        class="text-dark fw-bolder text-hover-primary mb-1 fs-5">{{ $user->name }}</a>
+                                                    <span
+                                                        class="text-muted fw-bold text-muted d-block fs-7">{{ $user->email }}</span>
+                                                </div>
+                                            </div>
+                                        </td>
                                         <td class="">
-                                            <a href="#" class="btn btn-info btn-sm edit-button"
-                                                data-id="{{ $age->id }}" data-bs-toggle="modal"
-                                                data-bs-target="#kt_modal_edit">Edit</a>
-                                            <a href="#" class="btn btn-danger btn-sm delete-button"  data-id="{{ $age->id }}"
-                                                data-bs-toggle="modal" data-bs-target="#kt_modal_delete"">Hapus</a>
+                                            <a href="#" class="btn btn-danger btn-sm delete-button"
+                                                data-id="{{ $user->id }}" data-bs-toggle="modal"
+                                                data-bs-target="#kt_modal_delete"">Hapus</a>
                                         </td>
                                     </tr>
                                 @endforeach
@@ -127,12 +151,10 @@
 
         </div>
     </div>
-    @include('managemen.umur.modal.add')
-    @include('managemen.umur.modal.edit')
-    @include('managemen.umur.modal.delete')
+    @include('user.modal.delete')
 
 
 @endsection
 
 
-@include('managemen.umur.script')
+@include('user.script')

@@ -22,7 +22,7 @@ class RegisterRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'name' => 'required|string',
+            'name' => 'required|alpha',
             'email' => 'required|email|min:3|max:255|unique:users,email',
             'password' => 'required|confirmed|string|min:8|max:255|regex:/[a-zA-Z]/|regex:/[0-9]/',
         ];

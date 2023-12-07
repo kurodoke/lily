@@ -127,7 +127,7 @@
                             <!--end::Label-->
                             <!--begin::Input-->
                             <input class="form-control form-control-lg form-control-solid" type="text"
-                                name="email" />
+                                name="email" value="{{ old('email') }}"/>
                             @error('email')
                                 <div class="d-block invalid-feedback">
                                     {{ $message }}

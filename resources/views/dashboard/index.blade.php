@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title', 'Dashboard')
-@section('subtitle', 'Dashboard')
+@section('subtitle', 'Admin ➞ Dashboard')
 
 @section('content')
     <div class="content d-flex flex-column flex-column-fluid" id="kt_content">
@@ -107,7 +107,7 @@
                     <!--end::Card-->
                 </div>
                 <div class="col-md-4 rounded p-0 overflow-hidden">
-                    <lottie-player autoplay loop mode="normal" speed="2" class=""
+                    <lottie-player autoplay loop mode="normal" speed="3" class=""
                         src={{ asset('assets/lottie/windmill.json') }}>
                     </lottie-player>
                 </div>

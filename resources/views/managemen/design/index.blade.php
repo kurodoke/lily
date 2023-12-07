@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title', 'Pengelolaan data')
-@section('subtitle', 'Design Game')
+@section('subtitle', 'Admin ➞ Pengelolaan data ➞ Design Game')
 
 @section('content')
 

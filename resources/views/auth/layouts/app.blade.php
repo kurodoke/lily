@@ -21,6 +21,7 @@
 </head>
 
 <body>
+    @include('layouts.loading')
     <div id="auth">
         @yield('content')
     </div>
@@ -30,6 +31,8 @@
     <script src={{ asset('assets/js/scripts.bundle.js') }}></script>
     <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
     <!--end::Global Javascript Bundle-->
+
+    @include('layouts.script')
 </body>
 
 </html>

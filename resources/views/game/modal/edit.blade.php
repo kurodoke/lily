@@ -93,11 +93,13 @@
                             <!--begin::Label-->
                             <label class="d-flex align-items-center fs-6 fw-bold mb-2">
                                 <span class="required">Nama Game</span>
-
+                                <i class="fas fa-exclamation-circle ms-2 fs-7" data-bs-toggle="tooltip" title=""
+                                    data-bs-original-title="Nama Game tidak bisa diedit"
+                                    aria-label="Nama Game tidak bisa diedit"></i>
                             </label>
                             <!--end::Label-->
                             <input type="text" class="form-control form-control-solid"
-                                placeholder="Masukkan Nama Game" name="game_name" @readonly(true)/>
+                                placeholder="Masukkan Nama Game" name="game_name" @readonly(true) />
                         </div>
                         <!--end::Input group-->
 
@@ -106,6 +108,9 @@
                             <!--begin::Label-->
                             <label class="d-flex align-items-center fs-6 fw-bold mb-2">
                                 <span class="required">Nama Author</span>
+                                <i class="fas fa-exclamation-circle ms-2 fs-7" data-bs-toggle="tooltip" title=""
+                                    data-bs-original-title="Nama Author tidak bisa diedit"
+                                    aria-label="Nama Author tidak bisa diedit"></i>
 
                             </label>
                             <!--end::Label-->

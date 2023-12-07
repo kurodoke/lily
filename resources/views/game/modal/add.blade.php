@@ -92,11 +92,15 @@
                                    <!--begin::Label-->
                                    <label class="d-flex align-items-center fs-6 fw-bold mb-2">
                                        <span class="required">Nama Game</span>
-
+                                       <i class="fas fa-exclamation-circle ms-2 fs-7" data-bs-toggle="tooltip"
+                                           title=""
+                                           data-bs-original-title="Nama Game tidak bisa diedit, hati-hati jika menginput"
+                                           aria-label="Nama Game tidak bisa diedit, hati-hati jika menginput"></i>
                                    </label>
                                    <!--end::Label-->
                                    <input type="text" class="form-control form-control-solid"
-                                       placeholder="Masukkan Nama Game" name="game_name" />
+                                       placeholder="Masukkan Nama Game" name="game_name"
+                                       value="{{ old('game_name') }}" />
                                </div>
                                <!--end::Input group-->
 
@@ -105,11 +109,16 @@
                                    <!--begin::Label-->
                                    <label class="d-flex align-items-center fs-6 fw-bold mb-2">
                                        <span class="required">Nama Author</span>
+                                       <i class="fas fa-exclamation-circle ms-2 fs-7" data-bs-toggle="tooltip"
+                                           title=""
+                                           data-bs-original-title="Nama Author tidak bisa diedit, hati-hati jika menginput"
+                                           aria-label="Nama Author tidak bisa diedit, hati-hati jika menginput"></i>
 
                                    </label>
                                    <!--end::Label-->
                                    <input type="text" class="form-control form-control-solid"
-                                       placeholder="Masukkan Nama Author" name="game_author" />
+                                       placeholder="Masukkan Nama Author" name="game_author"
+                                       value="{{ old('game_author') }}" />
                                </div>
                                <!--end::Input group-->
 
@@ -122,7 +131,8 @@
                                    </label>
                                    <!--end::Label-->
                                    <input type="number" class="form-control form-control-solid"
-                                       placeholder="Masukkan Total Download" name="game_download" autocomplete="off"/>
+                                       placeholder="Masukkan Total Download" name="game_download" autocomplete="off"
+                                       value="{{ old('game_download') }}" />
                                </div>
                                <!--end::Input group-->
 
@@ -135,7 +145,8 @@
                                    </label>
                                    <!--end::Label-->
                                    <input type="number" class="form-control form-control-solid"
-                                       placeholder="Masukkan Ukuran Game (MB)" name="game_size" autocomplete="off" />
+                                       placeholder="Masukkan Ukuran Game (MB)" name="game_size" autocomplete="off"
+                                       value="{{ old('game_size') }}" />
                                </div>
                                <!--end::Input group-->
 
@@ -148,7 +159,7 @@
                                    </label>
                                    <!--end::Label-->
                                    <textarea class="form-control form-control-solid" rows="3" name="game_description"
-                                       placeholder="Masukkan Deskripsi Game"></textarea>
+                                       placeholder="Masukkan Deskripsi Game">{{ old('game_description') }}</textarea>
                                </div>
                                <!--end::Input group-->
 
@@ -161,7 +172,7 @@
                                    </label>
                                    <!--end::Label-->
                                    <input type="number" class="form-control form-control-solid overflow-hidden "
-                                       placeholder="Masukkan Umur Game" name="game_age" id="kt_tagify_add_age"/>
+                                       placeholder="Masukkan Umur Game" name="game_age" id="kt_tagify_add_age" />
                                </div>
                                <!--end::Input group-->
 
@@ -270,7 +281,8 @@
 
                                    </label>
                                    <!--end::Label-->
-                                   <input type="text" class="form-control form-control-solid overflow-hidden kt_tagify_learn"
+                                   <input type="text"
+                                       class="form-control form-control-solid overflow-hidden kt_tagify_learn"
                                        placeholder="Masukkan Hasil Pembelajaran" name="game_learn"
                                        id="kt_tagify_add_learn" />
                                </div>

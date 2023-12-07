@@ -7,6 +7,7 @@ use App\Http\Controllers\DesignForChildrenController;
 use App\Http\Controllers\GameController;
 use App\Http\Controllers\LearnController;
 use App\Http\Controllers\TagController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -41,6 +42,7 @@ Route::middleware('auth:admin')->name('admin.')->group(function () {
     });
 
     Route::resource('game', GameController::class)->except('create','show','edit');
+    Route::resource('user', UserController::class)->except('create', 'store', 'show', 'edit', 'update');
 });
 
 
