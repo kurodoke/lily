@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg viewBox="8 19 137 61.8" xmlns="http://www.w3.org/2000/svg">
+  <g data-v-0dd9719b="" fill="#ffff" class="iconlettersvg-g iconlettersvg" transform="matrix(1, 0, 0, 1, 16.865150451660156, 24.65155792236328)">
+    <g>
+      <g class="tp-name" transform="translate(0,0)">
+        <g transform="scale(1)">
+          <g transform="translate(0, 0)">
+            <g class="name-imagesvg">
+              <g>
+                <rect fill="#ffff" fill-opacity="0" stroke-width="2" x="0" y="0" width="32.87323581113396" height="50" class="image-rect"/>
+                <svg x="0" y="0" width="32.87323581113396" height="50" filtersec="colorsb8756994330" class="image-svg-svg primary" style="overflow: visible;">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100.98 153.59">
+                    <defs>
+                      <filter id="a4682bb23-40a6-4c93-af78-a427aa34bb53" x="6.07" y="6.07" width="94.91" height="147.52" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                        <feFlood flood-color="#fff" result="bg"/>
+                        <feBlend in="SourceGraphic" in2="bg"/>
+                      </filter>
+                      <mask id="b4e7297ce-cbef-4b5b-ab60-eb70537d7a3e" x="6.07" y="6.07" width="94.91" height="147.52" maskUnits="userSpaceOnUse">
+                        <path filter="url(#a4682bb23-40a6-4c93-af78-a427aa34bb53)" d="M36.42 107.25V6.07H6.07v129.51h76.9v-28.33H36.42z" fill="#000000"/>
+                      </mask>
+                    </defs>
+                    <title>资源 12</title>
+                    <g mask="url(#b4e7297ce-cbef-4b5b-ab60-eb70537d7a3e)">
+                      <path fill="#00bbfa" d="M54.43 24.08L36.42 6.07v101.18l18.01 18.02V24.08z"/>
+                      <path fill="#bc47ff" d="M82.97 107.25v28.33H6.07l18.01 18.01h76.9v-28.32l-18.01-18.02z"/>
+                    </g>
+                    <path fill="#ffff" d="M30.35 101.18V0H0v129.51h76.9v-28.33H30.35z"/>
+                  </svg>
+                </svg>
+              </g>
+            </g>
+          </g>
+          <g transform="translate(32.87323581113396, 0)">
+            <g class="name-imagesvg">
+              <g>
+                <rect fill="#ffff" fill-opacity="0" stroke-width="2" x="0" y="0" width="17.71925307733988" height="50" class="image-rect"/>
+                <svg x="0" y="0" width="17.71925307733988" height="50" filtersec="colorsb9366495634" class="image-svg-svg primary" style="overflow: visible;">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 54.43 153.59">
+                    <defs>
+                      <filter id="ae393a1df-99d8-4ec1-9f2a-d34d861ed331" x="6.07" y="6.07" width="48.36" height="147.52" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                        <feFlood flood-color="#fff" result="bg"/>
+                        <feBlend in="SourceGraphic" in2="bg"/>
+                      </filter>
+                      <mask id="b72bacf23-837d-407c-b009-098394086072" x="6.07" y="6.07" width="48.36" height="147.52" maskUnits="userSpaceOnUse">
+                        <path filter="url(#ae393a1df-99d8-4ec1-9f2a-d34d861ed331)" d="M6.07 6.07h30.35v129.51H6.07z" fill="#000000"/>
+                      </mask>
+                    </defs>
+                    <title>资源 9</title>
+                    <g mask="url(#b72bacf23-837d-407c-b009-098394086072)">
+                      <path fill="#bc47ff" d="M36.42 6.07v129.51H6.07l18.01 18.01h30.35V24.08L36.42 6.07z"/>
+                    </g>
+                    <path fill="#ffff" d="M0 0h30.35v129.51H0z"/>
+                  </svg>
+                </svg>
+              </g>
+            </g>
+          </g>
+          <g transform="translate(50.59248888847384, 0)">
+            <g class="name-imagesvg">
+              <g>
+                <rect fill="#ffff" fill-opacity="0" stroke-width="2" x="0" y="0" width="32.87323581113396" height="50" class="image-rect"/>
+                <svg x="0" y="0" width="32.87323581113396" height="50" filtersec="colorsb2242913405" class="image-svg-svg primary" style="overflow: visible;">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100.98 153.59">
+                    <defs>
+                      <filter id="a4682bb23-40a6-4c93-af78-a427aa34bb53" x="6.07" y="6.07" width="94.91" height="147.52" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                        <feFlood flood-color="#fff" result="bg"/>
+                        <feBlend in="SourceGraphic" in2="bg"/>
+                      </filter>
+                      <mask id="b4e7297ce-cbef-4b5b-ab60-eb70537d7a3e" x="6.07" y="6.07" width="94.91" height="147.52" maskUnits="userSpaceOnUse">
+                        <path filter="url(#a4682bb23-40a6-4c93-af78-a427aa34bb53)" d="M36.42 107.25V6.07H6.07v129.51h76.9v-28.33H36.42z" fill="#000000"/>
+                      </mask>
+                    </defs>
+                    <title>资源 12</title>
+                    <g mask="url(#b4e7297ce-cbef-4b5b-ab60-eb70537d7a3e)">
+                      <path fill="#00bbfa" d="M54.43 24.08L36.42 6.07v101.18l18.01 18.02V24.08z"/>
+                      <path fill="#bc47ff" d="M82.97 107.25v28.33H6.07l18.01 18.01h76.9v-28.32l-18.01-18.02z"/>
+                    </g>
+                    <path fill="#ffff" d="M30.35 101.18V0H0v129.51h76.9v-28.33H30.35z"/>
+                  </svg>
+                </svg>
+              </g>
+            </g>
+          </g>
+          <g transform="translate(83.46572469960779, 0)">
+            <g class="name-imagesvg">
+              <g>
+                <rect fill="#ffff" fill-opacity="0" stroke-width="2" x="0" y="0" width="41.34058235941279" height="50" class="image-rect"/>
+                <svg x="0" y="0" width="41.34058235941279" height="50" filtersec="colorsb7162767720" class="image-svg-svg primary" style="overflow: visible;">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 126.99 153.59">
+                    <defs>
+                      <filter id="a2417b51b-5b5f-43df-bba5-02773ab0258d" x="6.07" y="6.07" width="120.92" height="147.52" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                        <feFlood flood-color="#fff" result="bg"/>
+                        <feBlend in="SourceGraphic" in2="bg"/>
+                      </filter>
+                      <mask id="bd65e8798-61fb-40e3-8bbc-53d79606e185" x="6.07" y="6.07" width="120.92" height="147.52" maskUnits="userSpaceOnUse">
+                        <path filter="url(#a2417b51b-5b5f-43df-bba5-02773ab0258d)" d="M75.7 6.07L57.51 45.19 39.32 6.07H6.07l36.28 78.02v51.49H72.7V84.09l36.27-78.02H75.7z" fill="#000000"/>
+                      </mask>
+                    </defs>
+                    <title>资源 25</title>
+                    <g mask="url(#bd65e8798-61fb-40e3-8bbc-53d79606e185)">
+                      <path fill="#bc47ff" d="M75.52 63.2L57.33 24.08 39.32 6.07l18.19 39.12L75.52 63.2z"/>
+                      <path fill="#ff5e5e" d="M108.97 6.07L72.7 84.09v51.49H42.35l18.01 18.01h30.35V102.1l36.28-78.02-18.02-18.01z"/>
+                    </g>
+                    <path fill="#ffff" d="M69.63 0L51.44 39.12 33.24 0H0l36.28 78.02v51.49h30.35V78.02L102.91 0H69.63z"/>
+                  </svg>
+                </svg>
+              </g>
+            </g>
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

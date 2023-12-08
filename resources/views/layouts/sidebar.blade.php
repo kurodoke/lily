@@ -4,8 +4,11 @@
     data-kt-drawer-toggle="#kt_aside_toggle">
     <div class="aside-logo flex-column-auto px-9 mb-9" id="kt_aside_logo">
         <!--begin::Logo-->
-        <a href="{{ route('admin.dashboard') }}">
+        {{-- <a href="{{ route('admin.dashboard') }}">
             <h1 class="fw-bolder fs-1">lily.</h1>
+        </a> --}}
+        <a href="../../demo3/dist/landing.html">
+            <img alt="Logo" src="{{ asset('assets/svg/logo-dark.svg') }}" class="logo-default h-25px h-lg-30px" />
         </a>
         <!--end::Logo-->
     </div>

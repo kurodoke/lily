@@ -5,6 +5,7 @@ use App\Http\Controllers\ChildrenAgeController;
 use App\Http\Controllers\CreativityController;
 use App\Http\Controllers\DesignForChildrenController;
 use App\Http\Controllers\GameController;
+use App\Http\Controllers\LandingPageController;
 use App\Http\Controllers\LearnController;
 use App\Http\Controllers\TagController;
 use App\Http\Controllers\UserController;
@@ -44,6 +45,8 @@ Route::middleware('auth:admin')->name('admin.')->group(function () {
     Route::resource('game', GameController::class)->except('create','show','edit');
     Route::resource('user', UserController::class)->except('create', 'store', 'show', 'edit', 'update');
 });
+
+Route::get('/', LandingPageController::class)->name('landing');
 
 
 require_once __DIR__.'/auth.php';
