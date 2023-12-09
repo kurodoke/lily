@@ -21,7 +21,13 @@
     <!--end::Page Vendor Stylesheets-->
 
     <link rel="stylesheet" href={{ asset('css/layouts.css') }}>
-    
+
+    <style>
+        [data-kt-sticky-landing-header=on] .landing-header .menu .menu-link.active {
+            color: #f1416c;
+        }
+    </style>
+
     <title>@yield('title')</title>
 </head>
 
@@ -31,6 +37,7 @@
     <div class="d-flex flex-column flex-root">
         @include('landing.layouts.header')
         @yield('content')
+        @include('landing.layouts.footer')
     </div>
 
     <!--begin::Global Javascript Bundle(used by all pages)-->
