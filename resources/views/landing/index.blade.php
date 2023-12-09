@@ -1,6 +1,8 @@
 @extends('landing.layouts.app')
 
 @section('content')
+    @include('landing.sections.section1')
+
     <h1>ashdkj</h1>
     <h1>ashdkj</h1>
     <h1>ashdkj</h1>

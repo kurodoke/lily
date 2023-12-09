@@ -29,11 +29,11 @@
             <div class="d-lg-block" id="kt_header_nav_wrapper">
                 <div class="d-lg-block p-5 p-lg-0" data-kt-drawer="true" data-kt-drawer-name="landing-menu" data-kt-drawer-activate="{default: true, lg: false}" data-kt-drawer-overlay="true" data-kt-drawer-width="200px" data-kt-drawer-direction="start" data-kt-drawer-toggle="#kt_landing_menu_toggle" data-kt-swapper="true" data-kt-swapper-mode="prepend" data-kt-swapper-parent="{default: '#kt_body', lg: '#kt_header_nav_wrapper'}">
                     <!--begin::Menu-->
-                    <div class="menu menu-column flex-nowrap menu-rounded menu-lg-row menu-title-gray-500 menu-state-title-warning nav nav-flush fs-5 fw-bold" id="kt_landing_menu">
+                    <div class="menu menu-column flex-nowrap menu-rounded menu-lg-row menu-title-gray-600 menu-state-title-warning nav nav-flush fs-5 fw-bold" id="kt_landing_menu">
                         <!--begin::Menu item-->
                         <div class="menu-item">
                             <!--begin::Menu link-->
-                            <a class="menu-link nav-link active py-3 px-4 px-xxl-6" href="#kt_body" data-kt-scroll-toggle="true" data-kt-drawer-dismiss="true">Home</a>
+                            <a class="menu-link nav-link py-3 px-4 px-xxl-6 text-black" href="#kt_body" data-kt-scroll-toggle="true" data-kt-drawer-dismiss="true">Home</a>
                             <!--end::Menu link-->
                         </div>
                         <!--end::Menu item-->
@@ -79,7 +79,7 @@
             <!--end::Menu wrapper-->
             <!--begin::Toolbar-->
             <div class="flex-equal text-end ms-1">
-                <a href="{{ route('login') }}" class="btn-sm btn-light">Login</a>
+                <a href="{{ route('login') }}" class="btn btn-sm btn-light-dark">Login</a>
             </div>
             <!--end::Toolbar-->
         </div>

@@ -21,6 +21,7 @@
     <!--end::Page Vendor Stylesheets-->
 
     <link rel="stylesheet" href={{ asset('css/layouts.css') }}>
+    
     <title>@yield('title')</title>
 </head>
 
