@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ChildrenAgeController;
 use App\Http\Controllers\CreativityController;
 use App\Http\Controllers\DesignForChildrenController;
@@ -30,5 +31,6 @@ Route::name('api.v1.')->prefix('v1')->group(function () {
     Route::resource("design", DesignForChildrenController::class)->only('show');
     Route::resource("pembelajaran", LearnController::class)->only('show');
     Route::resource("tag", TagController::class)->only('show');
+    Route::resource("kategori", CategoryController::class)->only('show');
     Route::resource("game", GameController::class)->only('show');
 });

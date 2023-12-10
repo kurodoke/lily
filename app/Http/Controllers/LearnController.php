@@ -18,7 +18,7 @@ class LearnController extends Controller
     public function index() : View
     {
         $learns = Learn::select('id', 'learn_name')->orderBy('id')->get();
-        return view('managemen.pembelajaran.index', compact('learns'));
+        return view('admin.managemen.pembelajaran.index', compact('learns'));
     }
 
     /**

@@ -18,7 +18,7 @@ class CreativityController extends Controller
     public function index() : View
     {
         $creativities = Creativity::select('id', 'creativity_name')->orderBy('id')->get();
-        return view('managemen.kreatifitas.index', compact('creativities'));
+        return view('admin.managemen.kreatifitas.index', compact('creativities'));
     }
 
     /**

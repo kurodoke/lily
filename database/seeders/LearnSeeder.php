@@ -14,7 +14,7 @@ class LearnSeeder extends Seeder
     public function run(): void
     {
         Learn::create([
-            'learn_name' => 'Pembelajaran sosial'
+            'learn_name' => 'Sosial'
         ]);
         Learn::create([
             'learn_name' => 'Matematika'

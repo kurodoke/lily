@@ -13,7 +13,7 @@ class UserController extends Controller
     public function index()
     {
         $users = User::select('id', 'name', 'email')->orderBy('id')->get();
-        return view('user.index', compact('users'));
+        return view('admin.user.index', compact('users'));
     }
 
     /**

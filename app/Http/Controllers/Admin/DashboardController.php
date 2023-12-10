@@ -12,6 +12,6 @@ class DashboardController extends Controller
     function index() : View {
         $_games = Game::orderByDesc('id')->take(5)->get();
         $games = Game::all();
-        return view('dashboard.index', compact('games', '_games'));
+        return view('admin.dashboard.index', compact('games', '_games'));
     }
 }

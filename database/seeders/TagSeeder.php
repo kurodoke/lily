@@ -17,10 +17,10 @@ class TagSeeder extends Seeder
             'tag_name' => 'Tantangan'
         ]);
         Tag::create([
-            'tag_name' => 'Arcade'
+            'tag_name' => 'Sepak Bola'
         ]);
         Tag::create([
-            'tag_name' => 'Teka - Teki'
+            'tag_name' => 'Realistis'
         ]);
         Tag::create([
             'tag_name' => 'Logika'
@@ -29,28 +29,28 @@ class TagSeeder extends Seeder
             'tag_name' => 'Offline'
         ]);
         Tag::create([
-            'tag_name' => 'Pemain Tunggal'
+            'tag_name' => 'Single-Player'
         ]);
         Tag::create([
             'tag_name' => 'Online'
         ]);
         Tag::create([
-            'tag_name' => 'Multi Pemain'
+            'tag_name' => 'Multi-Player'
         ]);
         Tag::create([
-            'tag_name' => 'Bergaya'
+            'tag_name' => 'Kompetitif'
         ]);
         Tag::create([
-            'tag_name' => 'Premium'
+            'tag_name' => 'Kooperatif'
         ]);
         Tag::create([
-            'tag_name' => 'Pembelajaran'
+            'tag_name' => 'Abstrak'
         ]);
         Tag::create([
-            'tag_name' => 'Simulasi'
+            'tag_name' => 'Peliharaan'
         ]);
         Tag::create([
-            'tag_name' => 'Kasual'
+            'tag_name' => 'Simulasi Kendaraan'
         ]);
         Tag::create([
             'tag_name' => 'Restoran'

@@ -27,6 +27,7 @@ class DatabaseSeeder extends Seeder
             DesignForChildrenSeeder::class,
             LearnSeeder::class,
             TagSeeder::class,
+            CategorySeeder::class,
         ]);
     }
 }

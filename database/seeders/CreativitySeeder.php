@@ -14,22 +14,19 @@ class CreativitySeeder extends Seeder
     public function run(): void
     {
         Creativity::create([
-            'creativity_name' => 'Kreatifitas'
+            'creativity_name' => 'Mendorong Kreatifitas'
         ]);
         Creativity::create([
-            'creativity_name' => 'Imaginasi'
+            'creativity_name' => 'Memicu Imaginasi'
         ]);
         Creativity::create([
-            'creativity_name' => 'Pura-pura bermain'
+            'creativity_name' => 'Menyebabkan Keingintahuan'
         ]);
         Creativity::create([
-            'creativity_name' => 'Memicu keingintahuan'
+            'creativity_name' => 'Melatih Berpikir Kritis'
         ]);
         Creativity::create([
-            'creativity_name' => 'Berpikir kritis'
-        ]);
-        Creativity::create([
-            'creativity_name' => 'Inovatif'
+            'creativity_name' => 'Mendorong Berpikir Inovatif'
         ]);
     }
 }

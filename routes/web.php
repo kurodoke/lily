@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ChildrenAgeController;
 use App\Http\Controllers\CreativityController;
 use App\Http\Controllers\DesignForChildrenController;
@@ -40,6 +41,10 @@ Route::middleware('auth:admin')->name('admin.')->group(function () {
     });
     Route::name('managemen.')->prefix('managemen')->group( function () {
         Route::resource('tag', TagController::class)->except('create','show','edit');
+    });
+
+    Route::name('managemen.')->prefix('managemen')->group( function () {
+        Route::resource('kategori', CategoryController::class)->except('create','show','edit');
     });
 
     Route::resource('game', GameController::class)->except('create','show','edit');

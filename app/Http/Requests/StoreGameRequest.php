@@ -47,6 +47,9 @@ class StoreGameRequest extends FormRequest
             'game_design' => '',
             'game_creativity' => '',
             'game_learn' => '',
+            'game_premium' => 'required|string',
+            'game_price' => 'nullable',
+            'game_category' => 'min:1|string',
         ];
     }
 

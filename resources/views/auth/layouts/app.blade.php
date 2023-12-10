@@ -21,7 +21,7 @@
 </head>
 
 <body>
-    @include('layouts.loading')
+    @include('loading.index')
     <div id="auth">
         @yield('content')
     </div>
@@ -32,7 +32,7 @@
     <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
     <!--end::Global Javascript Bundle-->
 
-    @include('layouts.script')
+    @include('loading.script')
 </body>
 
 </html>

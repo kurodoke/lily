@@ -14,13 +14,13 @@ class DesignForChildrenSeeder extends Seeder
     public function run(): void
     {
         DesignForChildren::create([
-            'design_name' => 'Kata dan suara'
+            'design_name' => 'Game dengan Kata dan Suara'
         ]);
         DesignForChildren::create([
-            'design_name' => 'Penggunaan yang mudah'
+            'design_name' => 'Game yang Penggunaannya mudah'
         ]);
         DesignForChildren::create([
-            'design_name' => 'Seni dan animasi'
+            'design_name' => 'Game dengan Seni dan Animasi'
         ]);
     }
 }

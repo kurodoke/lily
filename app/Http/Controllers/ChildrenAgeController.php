@@ -18,7 +18,7 @@ class ChildrenAgeController extends Controller
     public function index(): View
     {
         $ages = ChildrenAge::select('id', 'age_min', 'age_max')->orderBy('id')->get();
-        return view('managemen.umur.index', compact('ages'));
+        return view('admin.managemen.umur.index', compact('ages'));
     }
 
     /**

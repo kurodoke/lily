@@ -23,6 +23,8 @@ return new class extends Migration
             $table->string('download');
             $table->string('description');
             $table->string('logo_filename');
+            $table->enum('premium', ['Paid', 'Free-to-Play']);
+            $table->integer('price')->nullable();
             $table->timestamps();
 
             $table->unique(['name', 'author']);

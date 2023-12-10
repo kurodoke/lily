@@ -18,7 +18,7 @@ class TagController extends Controller
     public function index() : View
     {
         $tags = Tag::select('id', 'tag_name')->orderBy('id')->get();
-        return view('managemen.tag.index', compact('tags'));
+        return view('admin.managemen.tag.index', compact('tags'));
     }
 
     /**

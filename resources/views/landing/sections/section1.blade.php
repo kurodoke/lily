@@ -63,7 +63,7 @@
                     </div>
                     <!--end::Heading-->
                     <!--begin::Description-->
-                    <div class="fw-bold fs-6 fs-lg-4 text-muted">Kedua, Kami tampilkan Game-Game sesuai survey kamu sebelumnya, dan carilah game sesuai minat kamu.
+                    <div class="fw-bold fs-6 fs-lg-4 text-muted">Kedua, Kami tampilkan Game-Game sesuai survey kamu sebelumnya, dan pilihlah game yang sesuai minat kamu.
                     </div>
                     <!--end::Description-->
                 </div>
@@ -80,7 +80,7 @@
                         <span class="badge badge-circle badge-light-danger fw-bolder p-5 me-3 fs-3">3</span>
                         <!--end::Badge-->
                         <!--begin::Title-->
-                        <div class="fs-5 fs-lg-3 fw-bolder text-dark">Simpan Game Kesukaanmu</div>
+                        <div class="fs-5 fs-lg-3 fw-bolder text-dark">Simpan Game Pilihanmu</div>
                         <!--end::Title-->
                     </div>
                     <!--end::Heading-->

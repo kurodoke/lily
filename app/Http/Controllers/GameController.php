@@ -5,9 +5,11 @@ namespace App\Http\Controllers;
 use App\Models\Game;
 use App\Http\Requests\StoreGameRequest;
 use App\Http\Requests\UpdateGameRequest;
+use App\Models\Category;
 use App\Models\ChildrenAge;
 use App\Models\Creativity;
 use App\Models\DesignForChildren;
+use App\Models\GameCategory;
 use App\Models\GameCreativity;
 use App\Models\GameDesignForChildren;
 use App\Models\GameLearn;
@@ -33,9 +35,10 @@ class GameController extends Controller
         $design = DesignForChildren::select('id AS value', 'design_name AS name')->orderBy('id')->get();
         $tags = Tag::select('id AS value', 'tag_name AS name')->orderBy('id')->get();
         $learns = Learn::select('id AS value', 'learn_name AS name')->orderBy('id')->get();
+        $categories = Category::select('id AS value', 'category_name AS name')->orderBy('id')->get();
         $ages = ChildrenAge::select('id AS value', DB::raw("CONCAT(age_min, ' - ', age_max, ' Tahun') AS name"))->orderBy('id')->get();
 
-        return view('game.index', compact('games', 'creativities', 'design', 'tags', 'learns', 'ages'));
+        return view('admin.game.index', compact('games', 'creativities', 'design', 'tags', 'learns', 'ages', 'categories'));
     }
 
     /**
@@ -58,6 +61,7 @@ class GameController extends Controller
         $game_design = (!empty($validated['game_design'])) ? explode(",", $validated['game_design']) : [];
         $game_tags = (!empty($validated['game_tag'])) ? explode(",", $validated['game_tag']) : [];
         $game_learns = (!empty($validated['game_learn'])) ? explode(",", $validated['game_learn']) : [];
+        $game_categories = (!empty($validated['game_category'])) ? explode(",", $validated['game_category']) : [];
 
         try {
             $game_instance =  Game::create([
@@ -69,6 +73,8 @@ class GameController extends Controller
                 'description' => $validated['game_description'],
                 'age_id' => $validated['game_age'],
                 'logo_filename' => explode('public/',$game_image_filename)[1],
+                'premium' => $validated['game_premium'],
+                'price' => ($validated['game_premium'] === 'Paid' ? intval(preg_replace("/[^0-9]/", "", $validated['game_price'])) : null),
             ]);
 
             for ( $i = 0; $i < count($game_creativities); $i++ ) {
@@ -93,6 +99,13 @@ class GameController extends Controller
                 GameLearn::create([
                     'game_id' => $game_instance->id,
                     'learn_id' => $game_learns[$i],
+                ]);
+            }
+
+            for ( $i = 0; $i < count($game_categories); $i++ ) {
+                GameCategory::create([
+                    'game_id' => $game_instance->id,
+                    'category_id' => $game_categories[$i],
                 ]);
             }
             
@@ -123,6 +136,7 @@ class GameController extends Controller
                 'learn' => $game->learns,
                 'tag' => $game->tags,
                 'design' => $game->designs,
+                'category' => $game->categories,
             ],
         ]);
     }
@@ -147,6 +161,7 @@ class GameController extends Controller
         $game_design = (!empty($validated['game_design'])) ? explode(",", $validated['game_design']) : [];
         $game_tags = (!empty($validated['game_tag'])) ? explode(",", $validated['game_tag']) : [];
         $game_learns = (!empty($validated['game_learn'])) ? explode(",", $validated['game_learn']) : [];
+        $game_categories = (!empty($validated['game_category'])) ? explode(",", $validated['game_category']) : [];
 
         try {
             $game->update([
@@ -157,6 +172,8 @@ class GameController extends Controller
                 'size' => $validated['game_size'],
                 'description' => $validated['game_description'],
                 'age_id' => $validated['game_age'],
+                'premium' => $validated['game_premium'],
+                'price' => ($validated['game_premium'] === 'Paid' ? intval(preg_replace("/[^0-9]/", "", $validated['game_price'])) : null),
             ]);
     
     
@@ -167,6 +184,8 @@ class GameController extends Controller
             $game->tags()->sync($game_tags);
     
             $game->learns()->sync($game_learns);
+
+            $game->categories()->sync($game_categories);
     
     
             if(isset($validated['game_image'])){

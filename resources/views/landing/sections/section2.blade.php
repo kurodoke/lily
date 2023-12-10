@@ -81,9 +81,9 @@
             <!--end::Statistics-->
             <!--begin::Testimonial-->
             <div class="fs-2 fw-bold text-white text-center mb-3">
-                <span class="fs-1 lh-1 text-gray-800">“</span>Bermain Game adalah tentang belajar,
+                <span class="fs-1 lh-1 text-gray-800">“</span>Game haruslah sesuai karena Bermain Game adalah tentang belajar,
                 <br />
-                <span class="text-gray-800 me-1">bersenang-senang</span>, dan bersosialisasi
+                <span class="text-gray-800 me-1">bersenang-senang</span>, dan bersosialisasi.
                 <span class="fs-1 lh-1 text-gray-800">“</span>
             </div>
             <!--end::Testimonial-->
