@@ -10,7 +10,7 @@
     </h1>
     <!--end::Title-->
     <!--begin::Action-->
-    <a href="../../demo3/dist/index.html" class="btn btn-light-danger">Cari Rekomendasi di Sini.</a>
+    <a href="{{ route('survey') }}" class="btn btn-light-danger">Cari Rekomendasi di Sini.</a>
     <!--end::Action-->
 </div>
 <!--end::Heading-->

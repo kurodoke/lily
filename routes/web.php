@@ -8,6 +8,7 @@ use App\Http\Controllers\DesignForChildrenController;
 use App\Http\Controllers\GameController;
 use App\Http\Controllers\LandingPageController;
 use App\Http\Controllers\LearnController;
+use App\Http\Controllers\SurveyController;
 use App\Http\Controllers\TagController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
@@ -52,6 +53,7 @@ Route::middleware('auth:admin')->name('admin.')->group(function () {
 });
 
 Route::get('/', LandingPageController::class)->name('landing');
+Route::get('/survey', SurveyController::class)->name('survey');
 
 
 require_once __DIR__.'/auth.php';
