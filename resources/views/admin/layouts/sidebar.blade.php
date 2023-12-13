@@ -7,7 +7,7 @@
         {{-- <a href="{{ route('admin.dashboard') }}">
             <h1 class="fw-bolder fs-1">lily.</h1>
         </a> --}}
-        <a href="../../demo3/dist/landing.html">
+        <a href="{{ route('admin.dashboard') }}">
             <img alt="Logo" src="{{ asset('assets/svg/logo-dark.svg') }}" class="logo-default h-25px h-lg-30px" />
         </a>
         <!--end::Logo-->

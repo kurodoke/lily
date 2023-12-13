@@ -5,9 +5,11 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ChildrenAgeController;
 use App\Http\Controllers\CreativityController;
 use App\Http\Controllers\DesignForChildrenController;
+use App\Http\Controllers\DetailGameController;
 use App\Http\Controllers\GameController;
 use App\Http\Controllers\LandingPageController;
 use App\Http\Controllers\LearnController;
+use App\Http\Controllers\SearchGameController;
 use App\Http\Controllers\SurveyController;
 use App\Http\Controllers\TagController;
 use App\Http\Controllers\UserController;
@@ -25,7 +27,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-Route::middleware('auth:admin')->name('admin.')->group(function () {
+Route::middleware('auth:admin')->name('admin.')->prefix('admin')->group(function () {
     Route::get('/dashboard',[DashboardController::class, 'index'])->name('dashboard');
 
     Route::name('managemen.')->prefix('managemen')->group( function () {
@@ -54,6 +56,10 @@ Route::middleware('auth:admin')->name('admin.')->group(function () {
 
 Route::get('/', LandingPageController::class)->name('landing');
 Route::get('/survey', SurveyController::class)->name('survey');
+
+Route::get('/game', [SearchGameController::class, 'index'])->name('search-game');
+Route::get('/game/{id}', DetailGameController::class)->name('detail-game');
+
 
 
 require_once __DIR__.'/auth.php';

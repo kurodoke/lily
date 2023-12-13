@@ -1,7 +1,7 @@
 @extends('survey.layouts.app')
 
 @section('content')
-    <form action="" method="GET" class="survey d-flex flex-column justify-content-center align-items-center">
+    <form action="{{ route('search-game') }}" method="GET" class="survey d-flex flex-column justify-content-center align-items-center">
 
         <!--begin::survey umur-->
         <div class="survey-item d-flex vh-100 align-items-center" id="1">
@@ -16,7 +16,7 @@
                 <div class="questions ms-5">
                     @foreach ($ages as $age)
                         <div class="form-check form-check-custom form-check-solid form-check-sm mb-5">
-                            <input class="btn-check" type="radio" name="survey_age" value="{{ $age->id }}"
+                            <input class="btn-check" type="radio" name="search_age" value="{{ $age->id }}"
                                 id="age_{{ $age->id }}" />
                             <label class="btn btn-light-warning" for="age_{{ $age->id }}">
                                 {{ $age->age }}
@@ -38,7 +38,7 @@
                 <div class="questions ms-5 row justify-content-start">
                     @foreach ($categories as $category)
                         <div class="col form-check form-check-custom form-check-solid form-check-sm mb-5">
-                            <input class="btn-check" type="checkbox" name="survey_category" value="{{ $category->id }}"
+                            <input class="btn-check" type="checkbox" name="search_category[]" value="{{ $category->id }}"
                                 id="category_{{ $category->id }}" />
                             <label class="btn btn-sm btn-light-warning text-nowrap" for="category_{{ $category->id }}">
                                 {{ $category->category_name }}
@@ -60,13 +60,13 @@
                 </div>
                 <div class="questions ms-5">
                     <div class="form-check form-check-custom form-check-solid form-check-sm mb-5">
-                        <input class="btn-check" type="radio" name="survey_premium" value="1" id="premium_1" />
+                        <input class="btn-check" type="radio" name="search_premium" value="1" id="premium_1" />
                         <label class="btn btn-light-warning" for="premium_1">
                             Iya
                         </label>
                     </div>
                     <div class="form-check form-check-custom form-check-solid form-check-sm mb-5">
-                        <input class="btn-check" type="radio" name="survey_premium" value="0" id="premium_2" />
+                        <input class="btn-check" type="radio" name="search_premium" value="0" id="premium_2" />
                         <label class="btn btn-light-warning" for="premium_2">
                             Tidak
                         </label>
@@ -75,7 +75,7 @@
                 </div>
                 <div class="submit mt-10">
                     <div class="form-check form-check-custom form-check-solid form-check-sm mb-5">
-                        <button class="btn btn-warning" type="submit" id="survey_submit" @disabled(true)> Submit
+                        <button class="btn btn-warning" type="submit" id="search_submit" @disabled(true)> Submit
                         </button>
                     </div>
                 </div>

@@ -8,7 +8,7 @@
 
 <script>
     const starPlayer = document.querySelector("lottie-player");
-    document.getElementById('survey_submit').addEventListener('click', function (e) {
+    document.getElementById('search_submit').addEventListener('click', function (e) {
         e.preventDefault();
         starPlayer.style.display = 'block';
         starPlayer.play();
@@ -78,7 +78,7 @@
             }
         });
 
-        document.getElementById('survey_submit').disabled = !allItemsCompleted;
+        document.getElementById('search_submit').disabled = !allItemsCompleted;
     }
 
     var inputs = document.querySelectorAll('.survey-item input');
