@@ -73,6 +73,7 @@ class GameController extends Controller
                 'description' => $validated['game_description'],
                 'age_id' => $validated['game_age'],
                 'logo_filename' => explode('public/',$game_image_filename)[1],
+                'url' => $validated['game_url'],
                 'premium' => $validated['game_premium'],
                 'price' => ($validated['game_premium'] === 'Paid' ? intval(preg_replace("/[^0-9]/", "", $validated['game_price'])) : null),
             ]);
@@ -172,6 +173,7 @@ class GameController extends Controller
                 'size' => $validated['game_size'],
                 'description' => $validated['game_description'],
                 'age_id' => $validated['game_age'],
+                'url' => $validated['game_url'],
                 'premium' => $validated['game_premium'],
                 'price' => ($validated['game_premium'] === 'Paid' ? intval(preg_replace("/[^0-9]/", "", $validated['game_price'])) : null),
             ]);

@@ -23,11 +23,6 @@
                             <!--begin::Title-->
                             <h1 class="text-dark mb-3">Login ke Lily</h1>
                             <!--end::Title-->
-                            <!--begin::Link-->
-                            <div class="text-gray-400 fw-bold fs-4">Belum Punya Akun?
-                                <a href={{ route('register') }} class="link-warning fw-bolder">Sini Register</a>
-                            </div>
-                            <!--end::Link-->
                         </div>
                         <!--begin::Heading-->
 

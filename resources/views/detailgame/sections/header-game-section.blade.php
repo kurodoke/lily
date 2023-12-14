@@ -1,23 +1,40 @@
 <div class="row mt-10">
+    <div class="mb-5">
+        <a href="{{ url()->previous() }}" class="btn btn-sm btn-danger">
+            <!--begin::Svg Icon | path: assets/media/icons/duotune/arrows/arr074.svg-->
+            <span class="svg-icon svg-icon-danger svg-icon-3"><svg xmlns="http://www.w3.org/2000/svg" width="24"
+                    height="24" viewBox="0 0 24 24" fill="none">
+                    <path
+                        d="M11.2657 11.4343L15.45 7.25C15.8642 6.83579 15.8642 6.16421 15.45 5.75C15.0358 5.33579 14.3642 5.33579 13.95 5.75L8.40712 11.2929C8.01659 11.6834 8.01659 12.3166 8.40712 12.7071L13.95 18.25C14.3642 18.6642 15.0358 18.6642 15.45 18.25C15.8642 17.8358 15.8642 17.1642 15.45 16.75L11.2657 12.5657C10.9533 12.2533 10.9533 11.7467 11.2657 11.4343Z"
+                        fill="black" />
+                </svg></span>
+            <!--end::Svg Icon-->
+            <span>
+                Kembali
+            </span>
+        </a>
+    </div>
     <div class="col-4">
+
         <div class="">
-            <img class="h-100 w-md-auto" style="width: 100%" src="{{ asset('storage\game_image\mi0pU4YSGkbBLClNjn4MNQMNPtikGYM51WrdYNmB.webp') }}"
-                alt="">
+            <img class="h-100 w-md-auto rounded" style="width: 100%"
+                src="{{ asset('storage/' . $game->logo_filename) }}" alt="">
         </div>
     </div>
 
     <div class="col-8 text-start mt-5">
         <!--begin::title-->
-        <h3 class="fs-2hx fw-bolder pe-2"><span class="text-black">Pokemon Go</span></h3>
+        <h3 class="fs-2hx fw-bolder pe-2" id="detail-game" data-kt-scroll-offset="{default: 100, lg: 150}"><span
+                class="text-black">{{ $game->name }}</span></h3>
         <!--end::title-->
         <!--begin::author-->
-        <h3 class="fs-3 text-muted pe-2">Niantic inc.</h3>
+        <h3 class="fs-3 text-muted pe-2">{{ $game->author }}</h3>
         <!--end::author-->
 
         <!--begin::rating-->
         <div class="rating mt-5">
             @for ($i = 0; $i < 5; $i++)
-                <div class="rating-label me-2 checked">
+                <div class="rating-label me-2 {{ $i < $game->score ? 'checked' : '' }}">
                     <i class="bi bi-star-fill fs-1"></i>
                 </div>
             @endfor
@@ -27,7 +44,7 @@
 
         <div class="row position-relative mt-10">
             <div class="col text-center">
-                <span class="fs-3 fw-bold">1000+</span>
+                <span class="fs-3 fw-bold">{{ $game->download }}&pm;</span>
                 <p class="fs-5 text-muted">Total Download</p>
             </div>
 
@@ -44,12 +61,12 @@
                 </span>
                 <!--end::Svg Icon-->
 
-                <span class="fs-3 fw-bold">120Mb</span>
+                <span class="fs-3 fw-bold">{{ $game->size }}Mb</span>
                 <p class="fs-5 text-muted">Ukuran Game</p>
             </div>
             <div class="col text-center">
-                <span class="fs-3 fw-bold">3 - 7 Tahun</span>
-                <p class="fs-5 text-muted"> 
+                <span class="fs-3 fw-bold">{{ $game->ages->age_min . ' - ' . $game->ages->age_max }} Tahun</span>
+                <p class="fs-5 text-muted">
                     <!--begin::Svg Icon | path: assets/media/icons/duotune/general/gen049.svg-->
                     <span class="svg-icon svg-icon-muted svg-icon-2"><svg xmlns="http://www.w3.org/2000/svg"
                             width="24" height="24" viewBox="0 0 24 24" fill="none">
@@ -69,11 +86,11 @@
             </div>
         </div>
     </div>
-    <div class="btn btn-light-danger mt-10 w-100">
-        <a>
+    <a href="{{ $game->url }}" target="_blank" rel="noopener noreferrer">
+        <div class="btn btn-light-danger mt-10 w-100">
             <span>
                 Download Game
             </span>
-        </a>
-    </div>
+        </div>
+    </a>
 </div>

@@ -38,6 +38,7 @@
 <body id="kt_body" data-bs-spy="scroll" data-bs-target="#kt_landing_menu" data-bs-offset="200"
     class="bg-white position-relative">
     <!--begin::Main-->
+    @include('loading.index')
     <div class="d-flex flex-column flex-root">
         @include('searchgame.layouts.header')
         @yield('content')
@@ -55,6 +56,7 @@
     <!--end::Page Vendors Javascript-->
 
     @include('searchgame.layouts.script')
+    @include('loading.script')
 
     @yield('script')
 </body>

@@ -229,8 +229,8 @@
                                 <span class="required">Jenis Game</span>
                             </label>
                             <!--end::Label-->
-                            <select class="form-select" data-control="select2" data-placeholder="Pilih Jenis Game" name="game_premium"
-                                data-hide-search="true" id="kt_select_edit_premium" required>
+                            <select class="form-select" data-control="select2" data-placeholder="Pilih Jenis Game"
+                                name="game_premium" data-hide-search="true" id="kt_select_edit_premium" required>
                                 <option value="Free-to-Play" selected>Gratis</option>
                                 <option value="Paid">Berbayar</option>
                             </select>
@@ -249,6 +249,21 @@
                             <!--end::Label-->
                             <input type="text" class="form-control form-control-solid"
                                 placeholder="Isi Harga Game" name="game_price" id="kt_mask_edit_price" disabled />
+                        </div>
+                        <!--end::Input group-->
+
+                        <!--begin::Input group-->
+                        <div class="col-md-12 d-flex flex-column mb-8 fv-row">
+                            <!--begin::Label-->
+                            <label class="d-flex align-items-center fs-6 fw-bold mb-2">
+                                <span class="required">Link Download</span>
+                                <i class="fas fa-exclamation-circle ms-2 fs-7" data-bs-toggle="tooltip"
+                                    title="" data-bs-original-title="URL Game yang ada di Google PlayStore"
+                                    aria-label="URL Game yang ada di Google PlayStore"></i>
+                            </label>
+                            <!--end::Label-->
+                            <input type="text" class="form-control form-control-solid overflow-hidden text-primary"
+                                placeholder="Link Download dari Game" name="game_url" />
                         </div>
                         <!--end::Input group-->
 

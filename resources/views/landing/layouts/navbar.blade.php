@@ -80,7 +80,7 @@
             <!--end::Menu wrapper-->
             <!--begin::Toolbar-->
             <div class="flex-equal text-end ms-1">
-                <a href="{{ route('login') }}" class="btn btn-sm btn-light-dark">Login</a>
+                 
             </div>
             <!--end::Toolbar-->
         </div>

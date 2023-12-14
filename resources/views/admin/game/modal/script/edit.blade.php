@@ -111,6 +111,7 @@
                 $('#kt_modal_edit_form input[name="game_author"]').val(res.data.game.author);
                 $('#kt_modal_edit_form input[name="game_download"]').val(res.data.game.download);
                 $('#kt_modal_edit_form input[name="game_size"]').val(res.data.game.size);
+                $('#kt_modal_edit_form input[name="game_url"]').val(res.data.game.url);
                 $('#kt_modal_edit_form select[name="game_premium"]').val(res.data.game.premium).trigger('change');
                 $('#kt_modal_edit_form input[name="game_price"]').val((res.data.game.price === null) ? "" : res.data.game.price);
                 $('#kt_modal_edit_form textarea[name="game_description"]').val(res.data.game

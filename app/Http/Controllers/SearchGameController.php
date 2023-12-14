@@ -14,36 +14,37 @@ class SearchGameController extends Controller
     function index(Request $request): View
     {
 
-        $id_age = $request->input('search_age');
-        $id_category = $request->input('search_category');
-        $is_premium = $request->input('search_premium');
+        // try {
+            $id_age = $request->input('search_age');
+            $id_category = $request->input('search_category');
+            $is_premium = $request->input('search_premium');
+    
+            $games = collect([]);
+    
+    
+            $categories = Category::whereIn('id', $id_category)->get();
+    
+            $games = collect();
+    
+            foreach ($categories as $category) {
+                $games = $games->merge($category->games);
+            }
+    
+            if ($is_premium === "1") {
+                $games = $games->where('age_id', $id_age);
+            } else {
+                $games = $games->where('age_id', $id_age)->where('premium', 'Free-to-Play');
+            }
+            $games = $games->unique('id');
+            $games = $games->sortByDesc('score');
 
-        $games = collect([]);
-
-        if (isset($id_age) && isset($id_category) && isset($is_premium)) {
-            $games->push($this->getData($id_age, $id_category, $is_premium));
-        }
-
-
-        // $categories = Category::whereIn('id', $id_category)->get();
-
-        // $games = collect();
-
-        // foreach ($categories as $category) {
-        //     $games = $games->merge($category->games);
+            $yearNow = Carbon::now()->year;
+    
+            return view('searchgame.index', compact('yearNow', 'games'));
+        // } catch (\Throwable $th) {
+        //     abort(403);
         // }
-
-        // if ($is_premium === "1") {
-        //     $games = $games->where('age_id', $id_age);
-        // } else {
-        //     $games = $games->where('age_id', $id_age)->where('premium', 'Free-to-Play');
-        // }
-
-        // dd($games);
-
-        $yearNow = Carbon::now()->year;
-
-        return view('searchgame.index', compact('yearNow'));
+       
     }
 
 

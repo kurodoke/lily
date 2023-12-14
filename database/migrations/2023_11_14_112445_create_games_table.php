@@ -19,9 +19,10 @@ return new class extends Migration
                 table: 'Children_ages'
             )->onDelete('cascade');
             $table->integer('score');
+            $table->string('url');
             $table->integer('size');
             $table->string('download');
-            $table->string('description');
+            $table->longText('description');
             $table->string('logo_filename');
             $table->enum('premium', ['Paid', 'Free-to-Play']);
             $table->integer('price')->nullable();

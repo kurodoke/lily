@@ -214,7 +214,25 @@
                                    </label>
                                    <!--end::Label-->
                                    <input type="text" class="form-control form-control-solid"
-                                       placeholder="Isi Harga Game" name="game_price" id="kt_mask_detail_price" disabled @readonly(true)/>
+                                       placeholder="Isi Harga Game" name="game_price" id="kt_mask_detail_price"
+                                       disabled @readonly(true) />
+                               </div>
+                               <!--end::Input group-->
+
+                               <!--begin::Input group-->
+                               <div class="col-md-12 d-flex flex-column mb-8 fv-row">
+                                   <!--begin::Label-->
+                                   <label class="d-flex align-items-center fs-6 fw-bold mb-2">
+                                       <span class="required">Link Download</span>
+                                       <i class="fas fa-exclamation-circle ms-2 fs-7" data-bs-toggle="tooltip"
+                                           title=""
+                                           data-bs-original-title="URL Game yang ada di Google PlayStore"
+                                           aria-label="URL Game yang ada di Google PlayStore"></i>
+                                   </label>
+                                   <!--end::Label-->
+                                   <input type="text"
+                                       class="form-control form-control-solid overflow-hidden text-primary"
+                                       placeholder="Link Download dari Game" name="game_url" />
                                </div>
                                <!--end::Input group-->
 
@@ -228,7 +246,7 @@
                                    <!--end::Label-->
                                    <input type="text" class="form-control form-control-solid overflow-hidden "
                                        placeholder="Berikan Kategori Pada Game" name="game_category"
-                                       id="kt_tagify_detail_category" @readonly(true)/>
+                                       id="kt_tagify_detail_category" @readonly(true) />
                                </div>
                                <!--end::Input group-->
                                <!--begin::Input group-->

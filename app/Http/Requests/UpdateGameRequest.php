@@ -23,7 +23,7 @@ class UpdateGameRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'game_image' => 'file',
+            'game_image' => 'image',
             'game_name' => [
                 'required',
                 'string',
@@ -33,8 +33,8 @@ class UpdateGameRequest extends FormRequest
                 'string',
             ],
             'game_rating' => 'required|numeric',
-            'game_download' => 'required|numeric',
-            'game_size' => 'required|numeric',
+            'game_download' => 'required|numeric|min:0',
+            'game_size' => 'required|numeric|min:1',
             'game_description' => 'string',
             'game_age' => 'required',
             'game_tag' => '',
@@ -44,6 +44,7 @@ class UpdateGameRequest extends FormRequest
             'game_premium' => 'required|string',
             'game_price' => 'nullable',
             'game_category' => 'min:1|string',
+            'game_url' => 'required|url',
         ];
     }
 

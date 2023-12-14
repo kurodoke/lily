@@ -49,14 +49,20 @@
                         <!--begin::Menu item-->
                         <div class="menu-item">
                             <!--begin::Menu link-->
-                            <a class="menu-link nav-link py-3 px-4 px-xxl-6" href="#best-game" data-kt-scroll-toggle="true" data-kt-drawer-dismiss="true">Game yang paling terbaik</a>
+                            <a class="menu-link nav-link py-3 px-4 px-xxl-6" href="#detail-game" data-kt-scroll-toggle="true" data-kt-drawer-dismiss="true">Detail Game</a>
                             <!--end::Menu link-->
                         </div>
                         <!--end::Menu item-->
                         <!--begin::Menu item-->
                         <div class="menu-item">
                             <!--begin::Menu link-->
-                            <a class="menu-link nav-link py-3 px-4 px-xxl-6" href="#benefit" data-kt-scroll-toggle="true" data-kt-drawer-dismiss="true">Manfaat</a>
+                            <a class="menu-link nav-link py-3 px-4 px-xxl-6" href="#description" data-kt-scroll-toggle="true" data-kt-drawer-dismiss="true">Deskripsi Game</a>
+                            <!--end::Menu link-->
+                        </div>
+                        <!--end::Menu item-->
+                        <div class="menu-item">
+                            <!--begin::Menu link-->
+                            <a class="menu-link nav-link py-3 px-4 px-xxl-6" href="#other-informaton" data-kt-scroll-toggle="true" data-kt-drawer-dismiss="true">Informasi Tambahan</a>
                             <!--end::Menu link-->
                         </div>
                         <!--end::Menu item-->
@@ -67,7 +73,7 @@
             <!--end::Menu wrapper-->
             <!--begin::Toolbar-->
             <div class="flex-equal text-end ms-1">
-                <a href="{{ route('login') }}" class="btn btn-sm btn-light-dark">Login</a>
+                 
             </div>
             <!--end::Toolbar-->
         </div>
