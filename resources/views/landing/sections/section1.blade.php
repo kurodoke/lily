@@ -80,12 +80,12 @@
                         <span class="badge badge-circle badge-light-danger fw-bolder p-5 me-3 fs-3">3</span>
                         <!--end::Badge-->
                         <!--begin::Title-->
-                        <div class="fs-5 fs-lg-3 fw-bolder text-dark">Simpan Game Pilihanmu</div>
+                        <div class="fs-5 fs-lg-3 fw-bolder text-dark">Download dan Mainkan</div>
                         <!--end::Title-->
                     </div>
                     <!--end::Heading-->
                     <!--begin::Description-->
-                    <div class="fw-bold fs-6 fs-lg-4 text-muted">Terakhir, Simpan Game - Game pilihanmu hanya dengan <a class="link link-danger" href="{{ route('login') }}">Login</a> 
+                    <div class="fw-bold fs-6 fs-lg-4 text-muted">Terakhir, Download dan mainkan Game yang kamu pilih</a> 
                     </div>
                     <!--end::Description-->
                 </div>

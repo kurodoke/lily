@@ -28,6 +28,7 @@ class DatabaseSeeder extends Seeder
             LearnSeeder::class,
             TagSeeder::class,
             CategorySeeder::class,
+            GameSeeder::class,
         ]);
     }
 }
