@@ -45,13 +45,13 @@ class GameSeeder extends Seeder
             'size' => "121",
             'description' => 'Baru! Sekarang Anda dapat bertarung dengan Pelatih Pokémon GO lainnya secara online! Coba GO Battle League hari ini!
             
-            Bergabunglah dengan Pelatih di seluruh dunia yang menemukan Pokémon saat mereka menjelajahi dunia di sekitar mereka. Pokémon GO adalah sensasi permainan global yang telah diunduh lebih dari 1 miliar kali dan dinamai ""Game Seluler Terbaik"" oleh Penghargaan Pilihan Pengembang Game dan ""Aplikasi Terbaik Tahun Ini"" oleh TechCrunch.
+Bergabunglah dengan Pelatih di seluruh dunia yang menemukan Pokémon saat mereka menjelajahi dunia di sekitar mereka. Pokémon GO adalah sensasi permainan global yang telah diunduh lebih dari 1 miliar kali dan dinamai ""Game Seluler Terbaik"" oleh Penghargaan Pilihan Pengembang Game dan ""Aplikasi Terbaik Tahun Ini"" oleh TechCrunch.
             
-            Temukan dunia Pokémon: Jelajahi dan temukan Pokémon di mana pun Anda berada!
+Temukan dunia Pokémon: Jelajahi dan temukan Pokémon di mana pun Anda berada!
             
-            Tangkap lebih banyak Pokémon untuk melengkapi Pokédex Anda!
+Tangkap lebih banyak Pokémon untuk melengkapi Pokédex Anda!
             
-            Perjalanan bersama Buddy Pokémon Anda untuk membantu membuat Pokémon Anda lebih kuat dan mendapatkan hadiah!',
+Perjalanan bersama Buddy Pokémon Anda untuk membantu membuat Pokémon Anda lebih kuat dan mendapatkan hadiah!',
             'age_id' => "3",
             'logo_filename' => $storagePath,
             'url' => "https://play.google.com/store/apps/details?id=com.nianticlabs.pokemongo&hl=id-ID",
@@ -87,9 +87,9 @@ class GameSeeder extends Seeder
             'download' => "100000",
             'size' => "98",
             'description' => 'Selamat datang di Game Bertani untuk Anak-Anak, permainan peternakan hewan terbaik yang Anda dapat mengalami
-            kegembiraan menjalani kehidupan pertanian dan memanen buah - buahan dan sayuran segar, merawat pertanian yang imut
-            hewan, membangun gudang pertanian, dan banyak lagi! Biarkan tangan Anda kotor di game pertanian ini untuk anak-anak dan
-            benamkan diri Anda dalam dunia pertanian yang indah saat Anda menanam dan merawat berbagai tanaman dan menikmati hidup petani kecil di rumah pertanian Anda.',
+kegembiraan menjalani kehidupan pertanian dan memanen buah - buahan dan sayuran segar, merawat pertanian yang imut
+hewan, membangun gudang pertanian, dan banyak lagi! Biarkan tangan Anda kotor di game pertanian ini untuk anak-anak dan
+benamkan diri Anda dalam dunia pertanian yang indah saat Anda menanam dan merawat berbagai tanaman dan menikmati hidup petani kecil di rumah pertanian Anda.',
             'age_id' => "2",
             'logo_filename' => $storagePath,
             'url' => "https://play.google.com/store/apps/details?id=com.iz.farm.game.kids.animal.farming&hl=id-ID&pli=1",
