@@ -15,9 +15,6 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('author');
-            $table->foreignId('age_id')->constrained(
-                table: 'Children_ages'
-            )->onDelete('cascade');
             $table->integer('score');
             $table->string('url');
             $table->integer('size');

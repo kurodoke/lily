@@ -22,5 +22,14 @@ class LearnSeeder extends Seeder
         Learn::create([
             'learn_name' => 'Sains'
         ]);
+        Learn::create([
+            'learn_name' => 'Bahasa'
+        ]);
+        Learn::create([
+            'learn_name' => 'Musik'
+        ]);
+        Learn::create([
+            'learn_name' => 'Seni'
+        ]);
     }
 }

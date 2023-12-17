@@ -36,7 +36,7 @@ class UpdateGameRequest extends FormRequest
             'game_download' => 'required|numeric|min:0',
             'game_size' => 'required|numeric|min:1',
             'game_description' => 'string',
-            'game_age' => 'required',
+            'game_age' => 'min:1|string',
             'game_tag' => '',
             'game_design' => '',
             'game_creativity' => '',

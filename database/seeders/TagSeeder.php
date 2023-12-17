@@ -55,5 +55,14 @@ class TagSeeder extends Seeder
         Tag::create([
             'tag_name' => 'Restoran'
         ]);
+        Tag::create([
+            'tag_name' => 'Kartun'
+        ]);
+        Tag::create([
+            'tag_name' => 'Jig-Saw'
+        ]);
+        Tag::create([
+            'tag_name' => 'Menggambar'
+        ]);
     }
 }

@@ -11,7 +11,7 @@ class Game extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['name', 'author', 'size', 'download', 'score', 'description', 'logo_filename', 'age_id', 'premium', 'price', 'url'];
+    protected $fillable = ['name', 'author', 'size', 'download', 'score', 'description', 'logo_filename', 'premium', 'price', 'url'];
 
     function tags() : BelongsToMany {
         return $this->belongsToMany(Tag::class, 'game_tags', 'game_id', 'tag_id');
@@ -33,7 +33,7 @@ class Game extends Model
         return $this->belongsToMany(Creativity::class, 'game_creativities', 'game_id', 'creativity_id');
     }
 
-    function ages() : BelongsTo {
-        return $this->belongsTo(ChildrenAge::class, 'age_id', 'id');
+    function ages() : BelongsToMany {
+        return $this->belongsToMany(ChildrenAge::class, 'game_children_ages', 'game_id', 'age_id');
     }
 }

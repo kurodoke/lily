@@ -44,7 +44,7 @@
 
         <div class="row position-relative mt-10">
             <div class="col text-center">
-                <span class="fs-3 fw-bold">{{ $game->download }}&pm;</span>
+                <span class="fs-3 fw-bold">{{ number_format($game->download, 0, ',', '.') }}&pm;</span>
                 <p class="fs-5 text-muted">Total Download</p>
             </div>
 
@@ -61,11 +61,17 @@
                 </span>
                 <!--end::Svg Icon-->
 
-                <span class="fs-3 fw-bold">{{ $game->size }}Mb</span>
+                <span class="fs-3 fw-bold">{{ number_format($game->size, 0, ',', '.') }}MB</span>
                 <p class="fs-5 text-muted">Ukuran Game</p>
             </div>
             <div class="col text-center">
-                <span class="fs-3 fw-bold">{{ $game->ages->age_min . ' - ' . $game->ages->age_max }} Tahun</span>
+
+                @php
+                    $min = $game->ages()->min('age_min');
+                    $max = $game->ages()->max('age_max');
+                @endphp
+
+                <span class="fs-3 fw-bold">{{ $min . ' - ' . $max }} Tahun</span>
                 <p class="fs-5 text-muted">
                     <!--begin::Svg Icon | path: assets/media/icons/duotune/general/gen049.svg-->
                     <span class="svg-icon svg-icon-muted svg-icon-2"><svg xmlns="http://www.w3.org/2000/svg"
@@ -88,9 +94,28 @@
     </div>
     <a href="{{ $game->url }}" target="_blank" rel="noopener noreferrer">
         <div class="btn btn-light-danger mt-10 w-100">
-            <span>
-                Download Game
-            </span>
+            @if ($game->premium == 'Paid')
+                <span>
+                    <!--begin::Svg Icon | path: assets/media/icons/duotune/ecommerce/ecm007.svg-->
+                    <span class="svg-icon svg-icon-danger svg-icon-1"><svg xmlns="http://www.w3.org/2000/svg"
+                            width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path
+                                d="M21 9V11C21 11.6 20.6 12 20 12H14V8H20C20.6 8 21 8.4 21 9ZM10 8H4C3.4 8 3 8.4 3 9V11C3 11.6 3.4 12 4 12H10V8Z"
+                                fill="black" />
+                            <path d="M15 2C13.3 2 12 3.3 12 5V8H15C16.7 8 18 6.7 18 5C18 3.3 16.7 2 15 2Z"
+                                fill="black" />
+                            <path opacity="0.3"
+                                d="M9 2C10.7 2 12 3.3 12 5V8H9C7.3 8 6 6.7 6 5C6 3.3 7.3 2 9 2ZM4 12V21C4 21.6 4.4 22 5 22H10V12H4ZM20 12V21C20 21.6 19.6 22 19 22H14V12H20Z"
+                                fill="black" />
+                        </svg></span>
+                    <!--end::Svg Icon-->
+                    Berbayar Rp{{ number_format($game->price, 0, ',', '.') }}
+                </span>
+            @else
+                <span>
+                    Download Game
+                </span>
+            @endif
         </div>
     </a>
 </div>

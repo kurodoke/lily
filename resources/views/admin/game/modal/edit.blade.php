@@ -166,7 +166,7 @@
 
                             </label>
                             <!--end::Label-->
-                            <input type="number" class="form-control form-control-solid overflow-hidden "
+                            <input type="text" class="form-control form-control-solid overflow-hidden "
                                 placeholder="Masukkan Umur Game" name="game_age" id="kt_tagify_edit_age" />
                         </div>
                         <!--end::Input group-->

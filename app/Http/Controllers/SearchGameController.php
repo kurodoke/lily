@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
+use App\Models\ChildrenAge;
 use App\Models\Game;
 use Carbon\Carbon;
 use Illuminate\Contracts\View\View;
@@ -14,37 +15,41 @@ class SearchGameController extends Controller
     function index(Request $request): View
     {
 
-        // try {
+        try {
             $id_age = $request->input('search_age');
             $id_category = $request->input('search_category');
             $is_premium = $request->input('search_premium');
-    
-            $games = collect([]);
-    
-    
+
             $categories = Category::whereIn('id', $id_category)->get();
-    
+
             $games = collect();
-    
+
             foreach ($categories as $category) {
                 $games = $games->merge($category->games);
             }
-    
-            if ($is_premium === "1") {
-                $games = $games->where('age_id', $id_age);
-            } else {
-                $games = $games->where('age_id', $id_age)->where('premium', 'Free-to-Play');
+
+            $game_age = ChildrenAge::find($id_age);
+
+            // Membuat indeks dari $games berdasarkan ID
+            $gamesIndex = $games->keyBy('id');
+
+            $games = $game_age->games->filter(function ($ageGame) use ($gamesIndex) {
+                return $gamesIndex->has($ageGame->id);
+            });
+
+            if ($is_premium !== "1") {
+                $games = $games->where('premium', 'Free-to-Play');
             }
+
             $games = $games->unique('id');
-            $games = $games->sortByDesc('score');
+            $games = $games->sortByDesc('score')->sortByDesc('download');
 
             $yearNow = Carbon::now()->year;
-    
+
             return view('searchgame.index', compact('yearNow', 'games'));
-        // } catch (\Throwable $th) {
-        //     abort(403);
-        // }
-       
+        } catch (\Throwable $th) {
+            abort(403);
+        }
     }
 
 

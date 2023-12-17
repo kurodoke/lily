@@ -10,6 +10,7 @@ use App\Models\ChildrenAge;
 use App\Models\Creativity;
 use App\Models\DesignForChildren;
 use App\Models\GameCategory;
+use App\Models\GameChildrenAge;
 use App\Models\GameCreativity;
 use App\Models\GameDesignForChildren;
 use App\Models\GameLearn;
@@ -62,6 +63,7 @@ class GameController extends Controller
         $game_tags = (!empty($validated['game_tag'])) ? explode(",", $validated['game_tag']) : [];
         $game_learns = (!empty($validated['game_learn'])) ? explode(",", $validated['game_learn']) : [];
         $game_categories = (!empty($validated['game_category'])) ? explode(",", $validated['game_category']) : [];
+        $game_ages = (!empty($validated['game_age'])) ? explode(",", $validated['game_age']) : [];
 
         try {
             $game_instance =  Game::create([
@@ -71,7 +73,6 @@ class GameController extends Controller
                 'download' => $validated['game_download'],
                 'size' => $validated['game_size'],
                 'description' => $validated['game_description'],
-                'age_id' => $validated['game_age'],
                 'logo_filename' => explode('public/',$game_image_filename)[1],
                 'url' => $validated['game_url'],
                 'premium' => $validated['game_premium'],
@@ -107,6 +108,13 @@ class GameController extends Controller
                 GameCategory::create([
                     'game_id' => $game_instance->id,
                     'category_id' => $game_categories[$i],
+                ]);
+            }
+
+            for ( $i = 0; $i < count($game_ages); $i++ ) {
+                GameChildrenAge::create([
+                    'game_id' => $game_instance->id,
+                    'age_id' => $game_ages[$i],
                 ]);
             }
             
@@ -163,6 +171,7 @@ class GameController extends Controller
         $game_tags = (!empty($validated['game_tag'])) ? explode(",", $validated['game_tag']) : [];
         $game_learns = (!empty($validated['game_learn'])) ? explode(",", $validated['game_learn']) : [];
         $game_categories = (!empty($validated['game_category'])) ? explode(",", $validated['game_category']) : [];
+        $game_ages = (!empty($validated['game_age'])) ? explode(",", $validated['game_age']) : [];
 
         try {
             $game->update([
@@ -189,6 +198,7 @@ class GameController extends Controller
 
             $game->categories()->sync($game_categories);
     
+            $game->ages()->sync($game_ages);
     
             if(isset($validated['game_image'])){
                 $game_image_filename = $validated['game_image']->store("public/game_image");

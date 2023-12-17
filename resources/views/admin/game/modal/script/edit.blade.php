@@ -59,7 +59,6 @@
     //tag age
     const tag__edit_age = new Tagify(input__edit_ages, {
         ...options,
-        maxTags: 1,
         whitelist: data_ages
     });
     tag__edit_age.on('add', function(e) {
@@ -126,10 +125,14 @@
                     }
                 }
 
-                tag__edit_age.addTags([{
-                    value: res.data.age.id,
-                    name: `${res.data.age.age_min} - ${res.data.age.age_max} Tahun`
-                }]);
+                tag__edit_age.addTags(
+                    res.data.age.map((data) => {
+                        return {
+                            value: data.id,
+                            name: `${data.age_min} - ${data.age_max} Tahun`
+                        }
+                    })
+                );
 
                 tag__edit_tag.addTags(
                     res.data.tag.map((data) => {

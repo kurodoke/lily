@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 class ChildrenAge extends Model
 {
@@ -12,7 +12,7 @@ class ChildrenAge extends Model
 
     protected $fillable = ['age_min', 'age_max'];
 
-    function games() : HasMany {
-        return $this->hasMany(Game::class, 'age_id', 'id');
+    function games() : BelongsToMany {
+        return $this->belongsToMany(Game::class, 'game_children_ages', 'age_id', 'game_id');
     }
 }

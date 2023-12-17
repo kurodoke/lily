@@ -15,7 +15,9 @@ class DetailGameController extends Controller
         $game = Game::find($id);
 
         $yearNow = Carbon::now()->year;
-
+        if ($game == null){
+            return abort(404);
+        }
         return view('detailgame.index', compact('game', 'yearNow'));
     }
 }

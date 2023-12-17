@@ -60,7 +60,6 @@
     //tag age
     const tag__add_age = new Tagify(input__add_ages, {
         ...options,
-        maxTags: 1,
         whitelist: data_ages
     });
     tag__add_age.on('add', function(e) {

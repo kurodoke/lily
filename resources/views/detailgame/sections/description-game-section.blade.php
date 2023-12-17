@@ -6,7 +6,7 @@
     </div>
 
     <div class="col-12 description-wrapper">
-        <p class="fs-5 text-muted">
+        <p class="fs-5 text-muted" style="white-space: break-spaces;">
             {{ $game->description }}
         </p>
     </div>
@@ -43,7 +43,7 @@
                         <ul>
                             @if (count($game->designs) != 0)
                                 <li>
-                                    <p class=" fs-5 m-0">Game ini didesign dengan</p>
+                                    <p class=" fs-5 m-0"> Game ini dibuat berdasarkan</p>
                                     <ol class="breadcrumb breadcrumb-dot text-info fs-7 mb-3">
                                         @foreach ($game->designs as $design)
                                             <li class="breadcrumb-item pe-3">{{ $design->design_name }}</li>
