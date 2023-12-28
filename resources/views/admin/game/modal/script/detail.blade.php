@@ -82,8 +82,8 @@
 
 <script>
     //detail
-    $('.detail-button').on('click', function() {
-        let id = $(this).data('id');
+    function detail(e) {
+        let id = $(e).data('id');
         let API_URL = "{{ route('api.v1.game.show', '') }}/" + id
 
         tag__detail_creativity.removeAllTags();
@@ -178,5 +178,5 @@
             },
             error: (err) => {}
         });
-    });
+    };
 </script>

@@ -151,7 +151,7 @@
                                                 data-bs-placement="top" title="Edit Game">
                                                 <a href="#" class="btn btn-info btn-sm edit-button m-0 p-1"
                                                     data-id="{{ $game->id }}" data-bs-toggle="modal"
-                                                    data-bs-target="#kt_modal_edit">
+                                                    data-bs-target="#kt_modal_edit" onclick="edit(this)">
                                                     <!--begin::Svg Icon | path: assets/media/icons/duotune/general/gen055.svg-->
                                                     <span class="svg-icon svg-icon-info svg-icon-1 m-2">
                                                         <svg xmlns="http://www.w3.org/2000/svg" width="24"
@@ -175,7 +175,7 @@
                                                 title="Detail Game">
                                                 <a href="#" class="btn btn-warning btn-sm detail-button m-0 p-1"
                                                     data-id="{{ $game->id }}" data-bs-toggle="modal"
-                                                    data-bs-target="#kt_modal_detail">
+                                                    data-bs-target="#kt_modal_detail" onclick="detail(this)">
                                                     <!--begin::Svg Icon | path: assets/media/icons/duotune/general/gen005.svg-->
                                                     <span class="svg-icon svg-icon-warning svg-icon-1 m-2">
                                                         <svg xmlns="http://www.w3.org/2000/svg" width="24"
@@ -194,7 +194,7 @@
                                                 title="Hapus Game">
                                                 <a href="#" class="btn btn-danger btn-sm delete-button m-0 p-1"
                                                     data-id="{{ $game->id }}" data-bs-toggle="modal"
-                                                    data-bs-target="#kt_modal_delete">
+                                                    data-bs-target="#kt_modal_delete" onclick="del(this)">
                                                     <!--begin::Svg Icon | path: assets/media/icons/duotune/general/gen027.svg-->
                                                     <span class="svg-icon svg-icon-danger svg-icon-1 m-2">
                                                         <svg xmlns="http://www.w3.org/2000/svg" width="24"

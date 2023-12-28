@@ -42,7 +42,10 @@ class SearchGameController extends Controller
             }
 
             $games = $games->unique('id');
-            $games = $games->sortByDesc('score')->sortByDesc('download');
+            $games = $games->sortBy([
+                ['score', 'desc'],
+                ['download', 'desc'],
+            ]);
 
             $yearNow = Carbon::now()->year;
 

@@ -3,9 +3,11 @@
     // datatable
     $("#kt_datatable").DataTable();
 
-    //edit
-    $('.edit-button').on('click', function () {
-        let id = $(this).data('id');
+</script>
+
+<script>
+    function edit(e) {
+        let id = $(e).data('id');
         let API_URL = "{{ route('api.v1.kategori.show' , '') }}/" + id
         let EDIT_URL = "{{ route('admin.managemen.kategori.update', '') }}/" + id
 
@@ -27,18 +29,16 @@
 
             }
         })
-    });
+    };
 
     //delete
-    $('.delete-button').on('click', function () {
-        let id = $(this).data('id');
+    function del(e) {
+        let id = $(e).data('id');
         let DELETE_URL = "{{ route('admin.managemen.kategori.destroy', '') }}/" + id
 
         $('#kt_modal_delete_form').attr('action', DELETE_URL);
-    });
-
+    };
 </script>
-
 
 
 @endsection

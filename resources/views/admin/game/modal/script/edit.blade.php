@@ -82,8 +82,8 @@
 
 <script>
     //edit
-    $('.edit-button').on('click', function() {
-        let id = $(this).data('id');
+    function edit(e) {
+        let id = $(e).data('id');
         let API_URL = "{{ route('api.v1.game.show', '') }}/" + id
         let EDIT_URL = "{{ route('admin.game.update', '') }}/" + id
 
@@ -184,5 +184,5 @@
             },
             error: (err) => {}
         });
-    });
+    };
 </script>

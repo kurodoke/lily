@@ -105,9 +105,9 @@
                                         <td class="">
                                             <a href="#" class="btn btn-info btn-sm edit-button"
                                                 data-id="{{ $creativity->id }}" data-bs-toggle="modal"
-                                                data-bs-target="#kt_modal_edit">Edit</a>
+                                                data-bs-target="#kt_modal_edit" onclick="edit(this)">Edit</a>
                                             <a href="#" class="btn btn-danger btn-sm delete-button"  data-id="{{ $creativity->id }}"
-                                                data-bs-toggle="modal" data-bs-target="#kt_modal_delete"">Hapus</a>
+                                                data-bs-toggle="modal" data-bs-target="#kt_modal_delete" onclick="del(this)">Hapus</a>
                                         </td>
                                     </tr>
                                 @endforeach
